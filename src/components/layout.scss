@@ -1,0 +1,101 @@
+/* Theme */
+$font-color: #c4c4c4;
+$side-padding: 15px;
+
+body {
+    background-color: #333333;
+    color: $font-color;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: red;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Components */
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav > * {
+    display: inline-block;
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #eee;
+    padding: 1rem 1.5rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #262626;
+    color: red;
+}
+
+.container {
+    max-width: 768px;
+    margin: auto;
+    padding-right: $side-padding;
+    padding-left: $side-padding;
+}
+
+.container-fluid {
+    margin: auto;
+    padding-right: $side-padding;
+    padding-left: $side-padding;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-large {
+    font-size: 1.3rem;
+}
+
+.pull-right {
+    float: right;
+}
+
+.quote {
+    margin: 2rem 4rem;
+    border-left: 2px solid $font-color;
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+table {
+    margin: 0 auto 2rem;
+}
+
+table thead {
+    white-space: nowrap;
+    text-align: left;
+}
+
+table td,
+table th {
+    padding: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
