@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
                                 src="/LogoSponsorBlockSimple256px.png"
                                 alt="Home"
                                 style={{
-                                    height: "2rem",
+                                    height: "2.1rem",
                                     verticalAlign: "middle",
                                 }}
                             />

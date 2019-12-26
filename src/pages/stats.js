@@ -17,10 +17,7 @@ const IndexPage = () => {
         return fetch(url)
             .then(response => response.json())
             .then(resultData => {
-                let size = 100;
-                if (resultData.userNames.length < size) {
-                    size = resultData.useNames.length;
-                }
+                let size = resultData.userNames.length;
 
                 const transformedData = [];
                 for (let i = 0; i < size; i++) {
@@ -60,15 +57,15 @@ const IndexPage = () => {
                 <table>
                     <tbody>
                         <tr>
-                            <td>Total Contributing Users</td>
+                            <td>Total Contributing Users:</td>
                             <td>{totalStats.userCount} users</td>
                         </tr>
                         <tr>
-                            <td>Total Submissions</td>
+                            <td>Total Submissions:</td>
                             <td>{totalStats.totalSubmissions} sponsors</td>
                         </tr>
                         <tr>
-                            <td>Total Time Saved</td>
+                            <td>Total Time Saved:</td>
                             <td>
                                 {Math.floor(totalStats.minutesSaved / 60 / 24)}{" "}
                                 days{" "}
@@ -79,7 +76,7 @@ const IndexPage = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Total View Count</td>
+                            <td>Total View Count:</td>
                             <td>
                                 {totalStats.viewCount.toLocaleString()} views
                             </td>

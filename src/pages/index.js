@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 
+import { Link } from "gatsby";
+
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
-        userCount: 0,
-        totalSubmissions: 0,
-        minutesSaved: 0,
+        userCount: "Loading",
+        totalSubmissions: "Loading",
+        minutesSaved: "Loading",
     });
 
     useEffect(() => {
@@ -23,7 +25,7 @@ const IndexPage = () => {
             <div
                 style={{
                     backgroundColor: "rgb(38, 38, 38)",
-                    padding: "5rem 1rem",
+                    padding: "1rem 1rem",
                     textAlign: "center",
                     fontSize: "4rem",
                 }}
@@ -33,7 +35,7 @@ const IndexPage = () => {
                     style={{
                         marginRight: "3rem",
                         verticalAlign: "middle",
-                        maxHeight: "150px",
+                        maxHeight: "115px",
                     }}
                     alt="Logo"
                 />
@@ -52,6 +54,22 @@ const IndexPage = () => {
                             weighted random based distribution algorithm
                         </a>
                         .
+                    </p>
+
+                    <p>
+                        There are currently{" "}
+                        <strong>{totalStats.userCount}</strong> users who have
+                        submitted <strong>{totalStats.totalSubmissions}</strong>{" "}
+                        sponsors, which have saved a total of{" "}
+                        <strong>
+                            {isNaN(totalStats.minutesSaved)
+                                ? totalStats.minutesSaved
+                                : (totalStats.minutesSaved / 60 / 24).toFixed(
+                                      2
+                                  )}
+                        </strong>{" "}
+                        days of people's lives. Check out the{" "}
+                        <Link to="/stats">the leaderboard</Link>.
                     </p>
 
                     <div className="text-center">
@@ -87,18 +105,28 @@ const IndexPage = () => {
                             <img src="/mpv.png" alt="Download for MPV" />
                         </a>
                     </div>
-                </div>
 
-                <p className="quote">
-                    There are currently <strong>{totalStats.userCount}</strong>{" "}
-                    users who have submitted{" "}
-                    <strong>{totalStats.totalSubmissions}</strong> sponsors,
-                    which have saved a total of{" "}
-                    <strong>
-                        {(totalStats.minutesSaved / 60 / 24).toFixed(2)}
-                    </strong>{" "}
-                    days of people's lives.
-                </p>
+                    <p>
+                        The{" "}
+                        <a href="https://github.com/ajayyy/SponsorBlock">
+                            source code
+                        </a>{" "}
+                        is fully open and the{" "}
+                        <a href="https://sponsor.ajay.app/database.db">
+                            database
+                        </a>{" "}
+                        can be downloaded by anyone. I want to keep this as open
+                        as possible! You can view the docs for the{" "}
+                        <a href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs">
+                            public API here
+                        </a>
+                        .
+                    </p>
+
+                    <p className="text-center">
+                        Check out <Link to="/about">how it works</Link>.
+                    </p>
+                </div>
             </div>
         </Layout>
     );

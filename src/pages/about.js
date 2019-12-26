@@ -8,18 +8,6 @@ const IndexPage = () => (
         <SEO title="About" />
 
         <div className="container text-large">
-            <p>
-                The{" "}
-                <a href="https://github.com/ajayyy/SponsorBlock">source code</a>{" "}
-                is fully open and the{" "}
-                <a href="https://sponsor.ajay.app/database.db">database</a> can
-                be downloaded by anyone. I want to keep this as open as
-                possible! You can view the docs for the{" "}
-                <a href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs">
-                    public API here.
-                </a>
-            </p>
-
             <h2>How it works</h2>
 
             <p>
@@ -122,17 +110,27 @@ const IndexPage = () => (
             </p>
             <p>
                 When you vote, your user ID and hashed ip is stored along with
-                what you voted for.
+                what you voted for. By default, upvotes are made automatically
+                when a sponsor is viewed. This can be disabled in the options.
             </p>
 
             <p>
                 As well as these, whenever you submit a sponsor, it tells the
                 server and the server records one "view" on that sponsor. No IP
-                data or userId data is collected for this. This is to make it so
+                data or userID data is collected for this. This is to make it so
                 that you can see how many people you have helped and I can see
                 how much the extension is being used. However, I perfectly
                 understand why someone wouldn't want this data logged, so there
                 is an option to disable this if you would like.
+            </p>
+
+            <p>
+                View the{" "}
+                <a href="https://gist.github.com/ajayyy/aa9f8ded2b573d4f73a3ffa0ef74f796">
+                    Privacy Policy
+                </a>{" "}
+                for more specific info. I tried to make it easy to understand
+                without any useless legal talk.
             </p>
 
             <h3>Previous projects like this</h3>
