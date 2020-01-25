@@ -82,6 +82,17 @@ const Layout = ({ children }) => {
                 <ul className="nav">
                     <li>
                         <a
+                            href="https://ajay.app/"
+                            className="nav-link text-small profile"
+                        >
+                            Created by Ajay Ramachandran
+
+                            <img src="/ajay_profile.jpg"></img>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
                             href="https://discord.gg/QnmVMpU"
                             className="nav-link"
                         >

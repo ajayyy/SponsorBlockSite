@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 .fab {
@@ -58,6 +58,16 @@ img {
     color: red;
 }
 
+.nav-link.profile img  {
+    height: 1.8rem;
+
+    margin-left: 0.6rem;
+
+    vertical-align: middle;
+
+    border-radius: 50%;
+}
+
 .container {
     max-width: 768px;
     margin: auto;
@@ -80,7 +90,11 @@ img {
 }
 
 .text-small {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+}
+
+.text-normal {
+    font-size: 1em;
 }
 
 .no-bottom-margin {
