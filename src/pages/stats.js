@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
+        activeUsers: 0,
         userCount: 0,
         totalSubmissions: 0,
         minutesSaved: 0,
@@ -51,18 +52,22 @@ const IndexPage = () => {
         <Layout>
             <SEO title="Stats" />
 
-            <div className="container text-large">
+            <div className="container">
                 <h2 className="text-center">Overall Stats</h2>
 
                 <table>
                     <tbody>
                         <tr>
+                            <td>Total Active Users:</td>
+                            <td>{totalStats.activeUsers.toLocaleString()} users</td>
+                        </tr>
+                        <tr>
                             <td>Total Contributing Users:</td>
-                            <td>{totalStats.userCount} users</td>
+                            <td>{totalStats.userCount.toLocaleString()} users</td>
                         </tr>
                         <tr>
                             <td>Total Submissions:</td>
-                            <td>{totalStats.totalSubmissions} sponsors</td>
+                            <td>{totalStats.totalSubmissions.toLocaleString()} sponsors</td>
                         </tr>
                         <tr>
                             <td>Total Time Saved:</td>
@@ -76,9 +81,9 @@ const IndexPage = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Total View Count:</td>
+                            <td>Total Skip Count:</td>
                             <td>
-                                {totalStats.viewCount.toLocaleString()} views
+                                {totalStats.viewCount.toLocaleString()} skips
                             </td>
                         </tr>
                     </tbody>
@@ -121,7 +126,7 @@ const IndexPage = () => {
                                     )
                                 }
                             >
-                                View Counts
+                                Total Skips
                             </th>
                         </tr>
                     </thead>
@@ -131,9 +136,9 @@ const IndexPage = () => {
                             <tr key={index}>
                                 <td>{index + 1}.</td>
                                 <td>{value.userName}</td>
-                                <td>{value.totalSubmissions}</td>
+                                <td>{value.totalSubmissions.toLocaleString()}</td>
                                 <td>{value.minutesSaved}</td>
-                                <td>{value.viewCount}</td>
+                                <td>{value.viewCount.toLocaleString()}</td>
                             </tr>
                         ))}
                     </tbody>

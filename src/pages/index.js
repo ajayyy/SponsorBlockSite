@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
-        userCount: "Loading",
+        activeUsers: "Loading",
         totalSubmissions: "Loading",
         minutesSaved: "Loading",
     });
@@ -43,7 +43,7 @@ const IndexPage = () => {
             </div>
 
             <div className="container">
-                <div className="text-large">
+                <div className="">
                     <p>
                         SponsorBlock is a crowdsourced browser extension to
                         block sponsor segments of YouTube videos. Users submit
@@ -58,8 +58,8 @@ const IndexPage = () => {
 
                     <p>
                         There are currently{" "}
-                        <strong>{totalStats.userCount}</strong> users who have
-                        submitted <strong>{totalStats.totalSubmissions}</strong>{" "}
+                        <strong>{totalStats.activeUsers.toLocaleString()}</strong> users who have
+                        submitted <strong>{totalStats.totalSubmissions.toLocaleString()}</strong>{" "}
                         sponsors, which have saved a total of{" "}
                         <strong>
                             {isNaN(totalStats.minutesSaved)
