@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://github.com/ajayyy/SponsorBlockServer#api-docs"
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs"
                             className="nav-link"
                         >
                             API
