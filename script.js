@@ -3,7 +3,7 @@ function getTotalStats() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             let response = JSON.parse(xmlhttp.responseText);
 
-            let totalUsers = response.userCount;
+            let totalUsers = response.activeUsers;
             let totalSubmissions = response.totalSubmissions;
             let minutesSaved = response.minutesSaved;
 
@@ -11,10 +11,6 @@ function getTotalStats() {
             countUp(document.getElementById("totalUsers"), 0, totalUsers);
             countUp(document.getElementById("totalSubmissions"), 0, totalSubmissions);
             countUp(document.getElementById("daysSaved"), 0, (minutesSaved / 60 / 24).toFixed(2));
-
-            // document.getElementById("totalUsers").innerText = totalUsers;
-            // document.getElementById("totalSubmissions").innerText = totalSubmissions;
-            // document.getElementById("hoursSaved").innerText = (minutesSaved / 60).toFixed(1);
         }
     });
 }
