@@ -13,11 +13,13 @@ body {
 }
 
 a {
+    transition: color 0.1s linear;
+
     color: inherit;
 }
 
 a:hover {
-    color: red;
+    color: rgb(255, 255, 255);
 }
 
 .fab {
