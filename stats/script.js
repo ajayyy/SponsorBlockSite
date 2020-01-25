@@ -28,7 +28,7 @@ function loadTopContributors(sortType) {
             let headerMinutes = document.createElement("td");
             headerMinutes.innerText = "People's Time Saved";
             let headerViews = document.createElement("td");
-            headerViews.innerText = "Total Views";
+            headerViews.innerText = "Total Skips";
 
             //add the columns
             headerRow.appendChild(headerRank);
