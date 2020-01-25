@@ -57,6 +57,14 @@ const IndexPage = () => {
                     </p>
 
                     <p>
+                        Check{" "}
+                        <a href="https://status.sponsor.ajay.app">
+                            status.sponsor.ajay.app
+                        </a> {" "}
+                        for server status.
+                    </p>
+
+                    <p>
                         There are currently{" "}
                         <strong>{totalStats.activeUsers.toLocaleString()}</strong> users who have
                         submitted <strong>{totalStats.totalSubmissions.toLocaleString()}</strong>{" "}
