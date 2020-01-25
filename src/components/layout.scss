@@ -31,6 +31,21 @@ img {
     max-width: 100%;
 }
 
+/* Title on home page */
+
+.title {
+    background-color: rgb(38, 38, 38);
+    padding: 1rem 1rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.title img {
+    margin-right: 3rem;
+    vertical-align: middle;
+    max-height: 115px;
+}
+
 /* Components */
 .nav {
     list-style-type: none;
@@ -128,4 +143,19 @@ table th {
 
 .pointer {
     cursor: pointer;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+    .title {
+        padding: 1rem 1rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .title img {
+        margin-right: 15px;
+        max-height: 40px;
+    }
 }

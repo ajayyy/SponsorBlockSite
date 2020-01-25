@@ -22,23 +22,12 @@ const IndexPage = () => {
         <Layout>
             <SEO title="Home" />
 
-            <div
-                style={{
-                    backgroundColor: "rgb(38, 38, 38)",
-                    padding: "1rem 1rem",
-                    textAlign: "center",
-                    fontSize: "4rem",
-                }}
-            >
+            <div className="title">
                 <img
                     src="/LogoSponsorBlock256px.png"
-                    style={{
-                        marginRight: "3rem",
-                        verticalAlign: "middle",
-                        maxHeight: "115px",
-                    }}
                     alt="Logo"
                 />
+
                 <span style={{ color: "white" }}>SponsorBlock</span>
             </div>
 
