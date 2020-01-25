@@ -51,7 +51,7 @@ const IndexPage = () => {
                         extension automatically skips sponsors it knows about.
                         It also features an upvote/downvote system with a{" "}
                         <a href="https://ajay.app/blog.html#voting-and-pseudo-randomness-or-sponsorblock-or-youtube-sponsorship-segment-blocker">
-                            weighted random based distribution algorithm
+                            weighted random based distribution
                         </a>
                         .
                     </p>
