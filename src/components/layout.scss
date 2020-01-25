@@ -158,4 +158,30 @@ table th {
         margin-right: 15px;
         max-height: 40px;
     }
+
+    /* Nav Bar */
+
+    .nav-link {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: #262626;
+        color: red;
+    }
+    
+    .nav-link.profile img  {
+        height: 1.8rem;
+    
+        margin-left: 0.6rem;
+    
+        vertical-align: middle;
+    
+        border-radius: 50%;
+    }
+
+    .nav .author {
+        display: none;
+    }
 }

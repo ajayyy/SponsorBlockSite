@@ -86,7 +86,7 @@ const Layout = ({ children }) => {
                 </ul>
 
                 <ul className="nav">
-                    <li>
+                    <li className="author">
                         <a
                             href="https://ajay.app/"
                             className="nav-link text-small profile"
