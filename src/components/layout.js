@@ -40,6 +40,12 @@ const Layout = ({ children }) => {
                     </li>
 
                     <li>
+                        <Link to="/" className="nav-link">
+                            Home
+                        </Link>
+                    </li>
+
+                    <li>
                         <a
                             href="https://sponsor.ajay.app/news"
                             className="nav-link"
