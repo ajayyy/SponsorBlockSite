@@ -87,11 +87,13 @@ function getTotalStats() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             let response = JSON.parse(xmlhttp.responseText);
 
+            let activeUsers = response.activeUsers;
             let totalUsers = response.userCount;
             let totalSubmissions = response.totalSubmissions;
             let minutesSaved = response.minutesSaved;
             let viewCount = response.viewCount;
 
+            document.getElementById("activeUsers").innerText = activeUsers.toLocaleString();
             document.getElementById("totalUsers").innerText = totalUsers.toLocaleString();
             document.getElementById("totalSubmissions").innerText = totalSubmissions.toLocaleString();
             document.getElementById("daysSaved").innerText = Math.floor(minutesSaved / 60 / 24);
