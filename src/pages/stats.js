@@ -89,7 +89,9 @@ const IndexPage = () => {
                     </tbody>
                 </table>
 
-                <h2 className="text-center">Top Contributors</h2>
+                <h2 className="text-center no-bottom-margin">Top Contributors</h2>
+
+                <div className="text-center text-small">Click a column title to change the sort</div>
             </div>
 
             <div className="container-fluid" style={{ overflowX: "auto" }}>
