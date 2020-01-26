@@ -23,8 +23,9 @@ const IndexPage = () => {
                 const transformedData = [];
                 for (let i = 0; i < size; i++) {
                     const hours = Math.floor(
-                        resultData.minutesSaved[i].minutesSaved / 60
+                        resultData.minutesSaved[i] / 60
                     );
+
                     transformedData.push({
                         userName: resultData.userNames[i],
                         viewCount: resultData.viewCounts[i],
@@ -58,19 +59,19 @@ const IndexPage = () => {
                 <table>
                     <tbody>
                         <tr>
-                            <td>Total Active Users:</td>
+                            <td>Active Users:</td>
                             <td>{totalStats.activeUsers.toLocaleString()} users</td>
                         </tr>
                         <tr>
-                            <td>Total Contributing Users:</td>
+                            <td>Contributing Users:</td>
                             <td>{totalStats.userCount.toLocaleString()} users</td>
                         </tr>
                         <tr>
-                            <td>Total Submissions:</td>
+                            <td>Submissions:</td>
                             <td>{totalStats.totalSubmissions.toLocaleString()} sponsors</td>
                         </tr>
                         <tr>
-                            <td>Total Time Saved:</td>
+                            <td>Time Saved:</td>
                             <td>
                                 {Math.floor(totalStats.minutesSaved / 60 / 24)}{" "}
                                 days{" "}
@@ -81,7 +82,7 @@ const IndexPage = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Total Skip Count:</td>
+                            <td>Skip Count:</td>
                             <td>
                                 {totalStats.viewCount.toLocaleString()} skips
                             </td>
@@ -118,7 +119,7 @@ const IndexPage = () => {
                                     )
                                 }
                             >
-                                Minutes Saved
+                                Time Saved
                             </th>
                             <th
                                 className="pointer"
