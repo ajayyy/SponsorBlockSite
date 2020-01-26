@@ -1,0 +1,38 @@
+{
+  "name": "sponsorblock",
+  "private": true,
+  "description": "SponsorBlock is a crowdsourced browser extension to block sponsor segments of YouTube videos.",
+  "version": "1.0.0",
+  "author": "Ajay Ramachandran",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "gatsby": "^2.18.12",
+    "gatsby-plugin-manifest": "^2.2.34",
+    "gatsby-plugin-purgecss": "^4.0.1",
+    "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-sass": "^2.1.26",
+    "node-sass": "^4.13.0",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,scss}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajayyy/SponsorBlock"
+  }
+}

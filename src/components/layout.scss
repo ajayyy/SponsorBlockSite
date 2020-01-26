@@ -1,0 +1,201 @@
+/* Theme */
+$font-color: #c4c4c4;
+$side-padding: 15px;
+
+body {
+    background-color: #333333;
+    color: $font-color;
+    font-family: sans-serif;
+    line-height: 1.5;
+
+    font-size: 1.2rem;
+}
+
+a {
+    transition: color 0.1s linear;
+
+    color: inherit;
+}
+
+a:hover {
+    color: white;
+}
+
+.fab {
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Title on home page */
+
+.title {
+    background-color: rgb(38, 38, 38);
+    padding: 1rem 1rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.title img {
+    margin-right: 3rem;
+    vertical-align: middle;
+    max-height: 115px;
+}
+
+/* Components */
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav > * {
+    display: inline-block;
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #eee;
+    padding: 1rem 1.5rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #262626;
+    color: red;
+}
+
+.nav-link.profile img  {
+    height: 1.8rem;
+
+    margin-left: 0.6rem;
+
+    vertical-align: middle;
+
+    border-radius: 50%;
+}
+
+.container {
+    max-width: 768px;
+    margin: auto;
+    padding-right: $side-padding;
+    padding-left: $side-padding;
+}
+
+.container-fluid {
+    margin: auto;
+    padding-right: $side-padding;
+    padding-left: $side-padding;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-large {
+    font-size: 1.3rem;
+}
+
+.text-small {
+    font-size: 0.8rem;
+}
+
+.text-normal {
+    font-size: 1em;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+
+.pull-right {
+    float: right;
+}
+
+.quote {
+    margin: 2rem 4rem;
+    border-left: 2px solid $font-color;
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+table {
+    margin: 0 auto 2rem;
+}
+
+table thead {
+    white-space: nowrap;
+    text-align: left;
+}
+
+table td,
+table th {
+    padding: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+    .title {
+        padding: 1rem 1rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .title img {
+        margin-right: 15px;
+        max-height: 40px;
+    }
+
+    /* Nav Bar */
+
+    .nav-link {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: #262626;
+        color: red;
+    }
+    
+    .nav .author {
+        display: none;
+    }
+
+    .stats-table table {
+        table-layout: fixed;
+
+        width: 100%;
+
+        border-collapse: collapse;
+    }
+
+    .stats-table .rank {
+        width: 1.2rem;
+    }
+
+    .stats-table th, .stats-table td {
+        overflow: hidden;
+
+        font-size: 9px;
+
+        text-align: center;
+    }
+
+    .container-fluid.stats-table {
+        padding: 0;
+    }
+}
