@@ -31,3 +31,7 @@ npm run build
 This will create a folder called `public`, which will contain a statically generated version of the site that can be easily served with any website or deployment service.
 
 You can then use `npm run serve` to preview the website before deployment.
+
+___________________________________________________
+
+Thanks for the rewrite [@jplsek](https://github.com/jplsek)!
