@@ -184,4 +184,28 @@ table th {
     .nav .author {
         display: none;
     }
+
+    .stats-table table {
+        table-layout: fixed;
+
+        width: 100%;
+
+        border-collapse: collapse;
+    }
+
+    .stats-table .rank {
+        width: 1.2rem;
+    }
+
+    .stats-table th, .stats-table td {
+        overflow: hidden;
+
+        font-size: 9px;
+
+        text-align: center;
+    }
+
+    .container-fluid.stats-table {
+        padding: 0;
+    }
 }

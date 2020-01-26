@@ -94,11 +94,11 @@ const IndexPage = () => {
                 <div className="text-center text-small">Click a column title to change the sort</div>
             </div>
 
-            <div className="container-fluid" style={{ overflowX: "auto" }}>
+            <div className="container-fluid stats-table">
                 <table>
                     <thead>
                         <tr>
-                            <th>Rank</th>
+                            <th className="rank">Rank</th>
                             <th>User Name</th>
                             <th
                                 className="pointer"
@@ -136,7 +136,7 @@ const IndexPage = () => {
                     <tbody>
                         {topUsers.map((value, index) => (
                             <tr key={index}>
-                                <td>{index + 1}.</td>
+                                <td className="rank">{index + 1}.</td>
                                 <td>{value.userName}</td>
                                 <td>{value.totalSubmissions.toLocaleString()}</td>
                                 <td>{value.minutesSaved}</td>
