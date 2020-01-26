@@ -46,12 +46,9 @@ const Layout = ({ children }) => {
                     </li>
 
                     <li>
-                        <a
-                            href="https://sponsor.ajay.app/news"
-                            className="nav-link"
-                        >
-                            Blog
-                        </a>
+                        <Link to="/about" className="nav-link">
+                            About
+                        </Link>
                     </li>
 
                     <li>
@@ -61,9 +58,12 @@ const Layout = ({ children }) => {
                     </li>
 
                     <li>
-                        <Link to="/about" className="nav-link">
-                            About
-                        </Link>
+                        <a
+                            href="https://sponsor.ajay.app/news"
+                            className="nav-link"
+                        >
+                            Blog
+                        </a>
                     </li>
 
                     <li>
