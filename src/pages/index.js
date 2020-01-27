@@ -20,7 +20,7 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO title="Skip over YouTube Sponsors - Sponsorship Skipper" />
 
             <div className="title">
                 <img
