@@ -2,7 +2,7 @@ module.exports = {
     siteMetadata: {
         title: "SponsorBlock",
         description:
-            "SponsorBlock is a crowdsourced browser extension to block sponsor segments of YouTube videos.",
+            "SponsorBlock is a crowdsourced browser extension to skip sponsor segments of YouTube videos.",
         author: "Ajay Ramachandran",
     },
     plugins: [

@@ -20,7 +20,7 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <SEO title="Skip over YouTube Sponsors - Sponsorship Skipper" />
+            <SEO title="Home" overwriteTitle="SponsorBlock - Skip over YouTube Sponsors - Sponsorship Skipper" />
 
             <div className="title">
                 <img
@@ -35,7 +35,7 @@ const IndexPage = () => {
                 <div className="">
                     <p>
                         SponsorBlock is a crowdsourced browser extension to
-                        block sponsor segments of YouTube videos. Users submit
+                        skip sponsor segments in YouTube videos. Users submit
                         when a sponsor happens from the extension, and the
                         extension automatically skips sponsors it knows about.
                         It also features an upvote/downvote system with a{" "}
