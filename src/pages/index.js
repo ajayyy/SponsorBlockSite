@@ -109,7 +109,7 @@ const IndexPage = () => {
                             source code
                         </a>{" "}
                         is fully open and the{" "}
-                        <a href="https://sponsor.ajay.app/database.db">
+                        <a href="https://api.sponsor.ajay.app/database.db">
                             database
                         </a>{" "}
                         can be downloaded by anyone. I want to keep this as open
