@@ -10,6 +10,7 @@ const IndexPage = () => (
         <div className="container">
             <h2>How it works</h2>
 
+            <p>
                 When you visit a YouTube video, it will check the database to
                 see if anyone has made any submissions for the video. If so, the
                 sponsored segment will automatically get skipped when you reach
