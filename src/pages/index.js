@@ -98,8 +98,18 @@ const IndexPage = () => {
 
                         <h3>Unofficial ports</h3>
 
-                        <a href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#mpv-media-player">
+                        <a 
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#mpv-media-player"
+                            style={{ paddingLeft: "15px" }}
+                        >
                             <img src="/mpv.png" alt="Download for MPV" />
+                        </a>
+
+                        <a 
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#kodi"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/kodi.svg" alt="Download for Kodi" style={{ height: "30px" }}/>
                         </a>
                     </div>
 
