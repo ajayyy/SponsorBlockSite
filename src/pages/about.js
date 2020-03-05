@@ -151,7 +151,7 @@ const IndexPage = () => (
                 database can be downloaded by anyone. The database may even be
                 automatically backed up by archive.org! The database will always
                 be available{" "}
-                <a href="https://sponsor.ajay.app/database.db">here</a>. It is a
+                <a href="https://api.sponsor.ajay.app/database.db">here</a>. It is a
                 sqlite database and can be opened in any sqlite database reading
                 program. Certain sensitive info is not in this database and is
                 not public such as individual votes (not vote counts) and IP
