@@ -74,7 +74,7 @@ const IndexPage = () => {
 
                         <a href="https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone">
                             <img
-                                src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png"
+                                src="/ChromeWebStore_BadgeWBorder_v2_206x58.png"
                                 alt="Download for Chrome"
                             />
                         </a>
@@ -84,7 +84,7 @@ const IndexPage = () => {
                             style={{ paddingLeft: "15px" }}
                         >
                             <img
-                                src="https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png"
+                                src="/AMO-button_1.png"
                                 alt="Download for Firefox"
                             />
                         </a>
@@ -94,6 +94,14 @@ const IndexPage = () => {
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/opera.png" alt="Download for Opera" />
+                        </a>
+
+                        <a
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/Android"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/android.png" alt="Download for Android"
+                                style={{ height: "58px" }} />
                         </a>
 
                         <h3>Unofficial ports</h3>
