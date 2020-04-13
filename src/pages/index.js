@@ -148,6 +148,31 @@ const IndexPage = () => {
                     <p className="text-center">
                         Check out <Link to="/about">how it works</Link>.
                     </p>
+
+                    <p className="text-center">
+                        Come chat with us on <a href="https://discord.gg/QnmVMpU">Discord</a>.
+                    </p>
+                    
+                    <h4 className="text-center">Credit</h4>
+
+                    <p className="text-center">
+                        Built and maintained by <a href="https://ajay.app/">Ajay Ramachandran</a>
+                    </p>
+
+                    <p className="text-center">
+                        Website rewritten by <a href="https://github.com/jplsek">Jeremy Plsek.</a>
+                    </p>
+
+                    <p>
+                        Thanks to all <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">SponsorBlock contributors</a> and {' '}
+                        <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">SponsorBlockServer contributors</a> such 
+                        as <a href="https://github.com/NDevTK">NDev</a>, <a href="https://github.com/Joe-Dowd">Joe Dowd</a>,{' '}
+                        <a href="https://github.com/bershanskiy">Anton Bershanskiy</a> and more.
+                    </p>
+
+                    <p className="text-center">
+                        Logo by <a href="https://github.com/munadikieh">@munadikieh</a>
+                    </p>
                 </div>
             </div>
         </Layout>

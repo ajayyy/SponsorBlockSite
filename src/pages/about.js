@@ -203,14 +203,6 @@ const IndexPage = () => (
             </p>
 
             <p>
-                The awesome{" "}
-                <a href="https://github.com/omarroth/invidious/wiki/API">
-                    Invidious API
-                </a>{" "}
-                is used to grab the time the video was published.
-            </p>
-
-            <p>
                 Some icons made by{" "}
                 <a
                     href="https://www.flaticon.com/authors/gregor-cresnar"
@@ -250,6 +242,14 @@ const IndexPage = () => (
                 >
                     CC 3.0 BY
                 </a>
+            </p>
+
+            <p>
+                The awesome{" "}
+                <a href="https://github.com/omarroth/invidious/wiki/API">
+                    Invidious API
+                </a>{" "}
+                used to be used.
             </p>
         </div>
     </Layout>
