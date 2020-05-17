@@ -34,7 +34,7 @@ const IndexPage = () => {
             <div className="container">
                 <div className="">
                     <p>
-                        SponsorBlock is a crowdsourced browser extension to
+                        SponsorBlock is an open-source crowdsourced browser extension to
                         skip sponsor segments in YouTube videos. Users submit
                         when a sponsor happens from the extension, and the
                         extension automatically skips sponsors it knows about.
@@ -57,13 +57,17 @@ const IndexPage = () => {
                         There are currently{" "}
                         <strong>{totalStats.activeUsers.toLocaleString()}</strong> users who have
                         submitted <strong>{totalStats.totalSubmissions.toLocaleString()}</strong>{" "}
-                        sponsors, which have saved a total of{" "}
+                        skip segments, which have saved a total of{" "}
                         <strong>
                             {isNaN(totalStats.minutesSaved)
                                 ? totalStats.minutesSaved
-                                : (totalStats.minutesSaved / 60 / 24).toFixed(
-                                      2
-                                  )}
+                                : (totalStats.minutesSaved / 60 / 24 / 365).toFixed(0)}
+                        </strong>{" "}
+                        years and{" "}
+                        <strong>
+                            {isNaN(totalStats.minutesSaved)
+                                ? totalStats.minutesSaved
+                                : (totalStats.minutesSaved / 60 / 24 % 365).toFixed(2)}
                         </strong>{" "}
                         days of people's lives. Check out the{" "}
                         <Link to="/stats">the leaderboard</Link>.

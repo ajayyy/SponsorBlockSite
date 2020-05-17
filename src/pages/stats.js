@@ -68,12 +68,14 @@ const IndexPage = () => {
                         </tr>
                         <tr>
                             <td>Submissions:</td>
-                            <td>{totalStats.totalSubmissions.toLocaleString()} sponsors</td>
+                            <td>{totalStats.totalSubmissions.toLocaleString()} segments</td>
                         </tr>
                         <tr>
                             <td>Time Saved:</td>
                             <td>
-                                {Math.floor(totalStats.minutesSaved / 60 / 24)}{" "}
+                                {Math.floor(totalStats.minutesSaved / 60 / 24 / 365)}{" "}
+                                years{" "}
+                                {(Math.floor(totalStats.minutesSaved / 60 / 24) % 365)}{" "}
                                 days{" "}
                                 {((totalStats.minutesSaved / 60) % 24).toFixed(
                                     1
