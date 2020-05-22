@@ -61,7 +61,7 @@ const IndexPage = () => {
                         <strong>
                             {isNaN(totalStats.minutesSaved)
                                 ? totalStats.minutesSaved
-                                : (totalStats.minutesSaved / 60 / 24 / 365).toFixed(0)}
+                                : Math.floor(totalStats.minutesSaved / 60 / 24 / 365)}
                         </strong>{" "}
                         years and{" "}
                         <strong>
