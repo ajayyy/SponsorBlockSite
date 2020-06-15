@@ -145,7 +145,7 @@ const IndexPage = () => {
                         {" "}
                         <a href="https://github.com/ajayyy/SponsorBlock/wiki/Database-and-API-License">
                             (License)
-                        </a>{" "}.
+                        </a>.
                         I want to keep this as open
                         as possible! You can view the docs for the{" "}
                         <a href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs">
