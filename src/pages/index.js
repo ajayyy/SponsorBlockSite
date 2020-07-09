@@ -38,11 +38,7 @@ const IndexPage = () => {
                         skip sponsor segments in YouTube videos. Users submit
                         when a sponsor happens from the extension, and the
                         extension automatically skips sponsors it knows about.
-                        It also features an upvote/downvote system with a{" "}
-                        <a href="https://ajay.app/blog.html#voting-and-pseudo-randomness-or-sponsorblock-or-youtube-sponsorship-segment-blocker">
-                            weighted random based distribution
-                        </a>
-                        .
+                        It also supports skipping other categories, such as intros, outros and reminders to subscribe.
                     </p>
 
                     <p>
@@ -152,7 +148,12 @@ const IndexPage = () => {
                         <a href="https://sponsor.ajay.app/database.db">
                             database
                         </a>{" "}
-                        can be downloaded by anyone. I want to keep this as open
+                        can be downloaded by anyone
+                        {" "}
+                        <a href="https://github.com/ajayyy/SponsorBlock/wiki/Database-and-API-License">
+                            (License)
+                        </a>.
+                        I want to keep this as open
                         as possible! You can view the docs for the{" "}
                         <a href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs">
                             public API here
