@@ -94,6 +94,17 @@ const IndexPage = () => {
                         </a>
 
                         <a
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/Edge"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img
+                                src="/edge.png"
+                                alt="Download for Edge"
+                                style={{ height: "58px" }}
+                            />
+                        </a>
+
+                        <a
                             href="https://github.com/ajayyy/SponsorBlock/wiki/Opera"
                             style={{ paddingLeft: "15px" }}
                         >
