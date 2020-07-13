@@ -93,7 +93,7 @@ const Layout = ({ children }) => {
                         >
                             Created by Ajay Ramachandran
 
-                            <img src="/ajay_profile.jpg"></img>
+                            <img src="/ajay_profile.jpg" alt="Ajay´s avatar"></img>
                         </a>
                     </li>
 
