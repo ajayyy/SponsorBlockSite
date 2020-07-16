@@ -24,8 +24,8 @@ const IndexPage = () => {
       'Intro',
       'Outro',
       'Interaction',
-      'Selfpromotion',
-      'Music offtopic',
+      'Self Promotion',
+      'Non-Music Section',
     ];
     const categoryStatsColors = ['#ff402c','#ff9416','#ffca1f','#d42ae8','#535ad7','#4bd762'];
 
