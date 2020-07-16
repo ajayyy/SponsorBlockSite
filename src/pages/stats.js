@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -13,6 +14,20 @@ const IndexPage = () => {
         minutesSaved: 0,
         viewCount: 0,
     });
+    const [categoryStats, setCategoryStats] = useState({
+      visible: false,
+      data: []
+    });
+    
+    const categoryStatsTitles = [
+      'Sponsor',
+      'Intro',
+      'Outro',
+      'Interaction',
+      'Selfpromotion',
+      'Music offtopic',
+    ];
+    const categoryStatsColors = ['#ff402c','#ff9416','#ffca1f','#d42ae8','#535ad7','#4bd762'];
 
     const [topUsers, setTopUsers] = useState([]);
 
@@ -27,7 +42,13 @@ const IndexPage = () => {
                     const hours = Math.floor(
                         resultData.minutesSaved[i] / 60
                     );
-
+                    let categoryStats = false;
+                    
+                    if ('categoryStats' in resultData) {
+                        const total = resultData.categoryStats[i].reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+                        categoryStats = resultData.categoryStats[i].map(value => ([value, ((value / total) * 100).toFixed(2)]));
+                    }
+                    
                     transformedData.push({
                         userName: resultData.userNames[i],
                         viewCount: resultData.viewCounts[i],
@@ -36,6 +57,7 @@ const IndexPage = () => {
                             (hours > 0 ? hours + "h " : "") +
                             (resultData.minutesSaved[i] % 60).toFixed(1) +
                             "m",
+                        categoryStats: categoryStats,
                     });
                 }
 
@@ -50,6 +72,15 @@ const IndexPage = () => {
 
         setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats");
     }, []);
+    
+    const displayCategoryStats = (stats) => {
+      if (stats === false) return;
+      setCategoryStats({visible:true, data:stats});
+    };
+    
+    const hideCategoryStats = () => {
+      setCategoryStats({visible:false, data:[]});
+    };
 
     return (
         <Layout>
@@ -140,16 +171,43 @@ const IndexPage = () => {
 
                     <tbody>
                         {topUsers.map((value, index) => (
-                            <tr key={index}>
-                                <td className="rank">{index + 1}.</td>
+                            <tr className={`row--${index % 2 ? 'odd' : 'even'}`} key={index}>
+                                <td className="rank celltype-number">{index + 1}.</td>
                                 <td>{value.userName}</td>
-                                <td>{value.totalSubmissions.toLocaleString()}</td>
-                                <td>{value.minutesSaved}</td>
-                                <td>{value.viewCount.toLocaleString()}</td>
+                                <td
+                                  className="celltype-number has--categorystats"
+                                  onMouseEnter={_=>{displayCategoryStats(value.categoryStats)}}
+                                  onMouseLeave={_=>{hideCategoryStats()}}>
+                                    {value.totalSubmissions.toLocaleString()}
+                                </td>
+                                <td className="celltype-number">{value.minutesSaved}</td>
+                                <td className="celltype-number">{value.viewCount.toLocaleString()}</td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
+                
+                <div className={classNames('categorystats', {'categorystats--hidden':!categoryStats.visible})}>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th colSpan="2">Submissions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {categoryStats.data.map((data, index) => (
+                      <tr className={classNames({'dim':data[0] === 0})} style={{
+                        color: categoryStatsColors[index]
+                      }} key={index}>
+                        <td>{categoryStatsTitles[index]}</td>
+                        <td className="celltype-number">{data[0]}</td>
+                        <td className="celltype-number">{data[1]}%</td>
+                      </tr>
+                    ))}
+                    </tbody>
+                  </table>
+                </div>
             </div>
         </Layout>
     );
