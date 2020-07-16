@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+const API_BASE = 'https://sponsor.ajay.app';
+
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
         activeUsers: 0,
@@ -42,11 +44,11 @@ const IndexPage = () => {
     }
 
     useEffect(() => {
-        fetch("https://sponsor.ajay.app/api/getTotalStats")
+        fetch(API_BASE + "/api/getTotalStats")
             .then(response => response.json())
             .then(resultData => setTotalStats(resultData));
 
-        setTopUserData("https://sponsor.ajay.app/api/getTopUsers?sortType=0");
+        setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats");
     }, []);
 
     return (
@@ -107,7 +109,7 @@ const IndexPage = () => {
                                 className="pointer"
                                 onClick={() =>
                                     setTopUserData(
-                                        "https://sponsor.ajay.app/api/getTopUsers?sortType=2"
+                                        API_BASE + "/api/getTopUsers?sortType=2"
                                     )
                                 }
                             >
@@ -117,7 +119,7 @@ const IndexPage = () => {
                                 className="pointer"
                                 onClick={() =>
                                     setTopUserData(
-                                        "https://sponsor.ajay.app/api/getTopUsers?sortType=0"
+                                        API_BASE + "/api/getTopUsers?sortType=0"
                                     )
                                 }
                             >
@@ -127,7 +129,7 @@ const IndexPage = () => {
                                 className="pointer"
                                 onClick={() =>
                                     setTopUserData(
-                                        "https://sponsor.ajay.app/api/getTopUsers?sortType=1"
+                                        API_BASE + "/api/getTopUsers?sortType=1"
                                     )
                                 }
                             >
