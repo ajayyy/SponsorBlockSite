@@ -20,7 +20,6 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "ink": "^2.7.1",
     "prettier": "^1.19.1"
   },
   "license": "MIT",
