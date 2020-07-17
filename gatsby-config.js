@@ -19,12 +19,5 @@ module.exports = {
             },
         },
         "gatsby-plugin-sass",
-        {
-            resolve: "gatsby-plugin-purgecss",
-            options: {
-                printRejected: true,
-                whitelist: ['row--even'],
-            },
-        },
     ],
 };
