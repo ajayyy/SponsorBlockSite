@@ -70,7 +70,7 @@ const IndexPage = () => {
             .then(response => response.json())
             .then(resultData => setTotalStats(resultData));
 
-        setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats");
+        setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
     }, []);
     
     const displayCategoryStats = (stats) => {
