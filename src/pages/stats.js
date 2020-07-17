@@ -27,7 +27,7 @@ const IndexPage = () => {
       'Self Promotion',
       'Non-Music Section',
     ];
-    const categoryStatsColors = ['#ff402c','#ff9416','#ffca1f','#d42ae8','#535ad7','#4bd762'];
+    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900'];
 
     const [topUsers, setTopUsers] = useState([]);
 
