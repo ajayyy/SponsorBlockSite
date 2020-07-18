@@ -13,7 +13,7 @@ const IndexPage = () => (
             <p>
                 When you visit a YouTube video, it will check the database to
                 see if anyone has made any submissions for the video. If so, the
-                sponsored segment will automatically get skipped when you reach
+                segment will automatically get skipped when you reach
                 it.
             </p>
 
@@ -26,32 +26,22 @@ const IndexPage = () => (
             </div>
 
             <p>
-                Once the sponsorship is skipped, you can report this sponsorship
-                and it will be recorded in the database. If you don't report it,
-                it will automatically be treated as an upvote (this can be
-                disabled in the options).
+                Once the sponsorship is skipped, you can upvote or downvote this
+                segment and it will be recorded in the database.
             </p>
 
             <p>
-                Upvotes are considered in an interesting way. Instead of just
-                sending the top reported time, it uses an algorithm that is a
-                little more complex, since some videos will have more than 1
-                sponsorship message. It will looks for all the "similar
-                sponsors" (I'm using the word similar here like it is used in
-                the term similar triangle). For each similar sponsor, only one
-                will be sent to the user. A similar sponsor is one that is
-                contained in eachother, so probably just similar times and one
-                is slightly off.
+                Instead of just sending the top reported segment, it will looks 
+                for all the overlapping segments. Only one of each group of 
+                overlapping segments will be sent to the user.
             </p>
 
-            <h3>Fancy vote distribution algorithm</h3>
+            <h3>Pseudo-random distribution</h3>
 
             <p>
-                In a system like that, one sponsor would get a few votes, and
-                then the rest of the sponsors would never appear again, and
-                could never get votes. I decided on using a more fancy algorithm
-                that used a weighted random distribution based on a square root
-                function.
+                To prevent one submission with a lot of votes never being able 
+                to be replaced, I decided to use a weighted random distribution 
+                based on the equation on the right.
                 <br />
                 <img
                     className="pull-right"
@@ -64,7 +54,7 @@ const IndexPage = () => (
                 sent out to users to get votes. So, most users will get the best
                 submission, but some users will get lesser votes submissions so
                 that they can either be upvoted or downvoted. Submissions with
-                less than -2 votes are ignored entirely.
+                less than -1 votes are ignored entirely.
             </p>
 
             <p>
@@ -78,59 +68,22 @@ const IndexPage = () => (
             <h3>Submissions</h3>
 
             <p>
-                Anyone can submit sponsors, either by clicking on the button
+                Anyone can submit segments, either by clicking on the button
                 that is added to the YouTube player or by opening the extensions
                 popup. The button in the YouTube player can be hidden. You click
-                once to indicate the start of a sponsor, then click again to
-                indicate the end. You can report as many sponsors as there are
-                in the video. Just make sure to hit the submit button when
-                you're finished.
+                once to indicate the start of a segment, then click again to
+                indicate the end. You can submit as many segments as there are
+                in the video. Make sure to choose the correct category for each segment.
             </p>
 
             <h3>What data is stored?</h3>
 
             <p>
-                The bare minimum. Everything stored can be downloaded from the
-                link above if you want to see.
-            </p>
-
-            <p>
-                When you submit a sponsor, a few things are stored. The data for
-                the sponsor, the video id, and a hashed version of your user ID
-                is stored. Your user ID is a randomly generated UUID generated
-                by your browser. As well as these, a hashed + salted (5000
-                times) version of your ip address is saved. This is to be able
-                to rate limit one ip sending way too much spam. Why is this
-                hashed? This just adds an extra layer of security if there is a
-                database breach. After hashing it this many times, it becomes
-                extremely difficult to reverse it and find what your actual IP
-                address is, but I can still verify that the current connection
-                is from that hashed ip. By hashing it 5000 times and salting it,
-                brute forcing would take longer to do.{" "}
-            </p>
-            <p>
-                When you vote, your user ID and hashed ip is stored along with
-                what you voted for. By default, upvotes are made automatically
-                when a sponsor is viewed. This can be disabled in the options.
-            </p>
-
-            <p>
-                As well as these, whenever you submit a sponsor, it tells the
-                server and the server records one "view" on that sponsor. No IP
-                data or userID data is collected for this. This is to make it so
-                that you can see how many people you have helped and I can see
-                how much the extension is being used. However, I perfectly
-                understand why someone wouldn't want this data logged, so there
-                is an option to disable this if you would like.
-            </p>
-
-            <p>
-                View the{" "}
+                The bare minimum. Check {" "}
                 <a href="https://gist.github.com/ajayyy/aa9f8ded2b573d4f73a3ffa0ef74f796">
-                    Privacy Policy
+                    this list
                 </a>{" "}
-                for more specific info. I tried to make it easy to understand
-                without any useless legal talk.
+                for more information
             </p>
 
             <h3>Previous projects like this</h3>
@@ -154,8 +107,8 @@ const IndexPage = () => (
                 <a href="https://api.sponsor.ajay.app/database.db">here</a>. It is a
                 sqlite database and can be opened in any sqlite database reading
                 program. Certain sensitive info is not in this database and is
-                not public such as individual votes (not vote counts) and IP
-                addresses. That information isn't needed by anyone anyone, only
+                not public such as individual votes (not vote counts) and hashed IP
+                addresses. That information isn't needed by anyone else, only
                 the server.
             </p>
 
@@ -197,6 +150,17 @@ const IndexPage = () => (
             </p>
 
             <h4>Credit</h4>
+
+            <p>
+                Built and maintained by <a href="https://ajay.app/">Ajay Ramachandran</a>
+            </p>
+
+            <p>
+                Thanks to all <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">SponsorBlock contributors</a> and {' '}
+                <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">SponsorBlockServer contributors</a> such 
+                as <a href="https://github.com/NDevTK">NDev</a>, <a href="https://github.com/Joe-Dowd">Joe Dowd</a>,{' '}
+                <a href="https://github.com/bershanskiy">Anton Bershanskiy</a> and more.
+            </p>
 
             <p>
                 Logo by <a href="https://github.com/munadikieh">@munadikieh</a>
@@ -249,7 +213,7 @@ const IndexPage = () => (
                 <a href="https://github.com/omarroth/invidious/wiki/API">
                     Invidious API
                 </a>{" "}
-                used to be used.
+                was used previously.
             </p>
         </div>
     </Layout>
