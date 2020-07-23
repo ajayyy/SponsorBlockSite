@@ -3,6 +3,10 @@ $font-color: #c4c4c4;
 $side-padding: 15px;
 $page-background-color: #333333;
 
+:root {
+    --categorystats-piechart-size: 200px;
+}
+
 body {
     background-color: $page-background-color;
     color: $font-color;
@@ -163,6 +167,7 @@ table.highlight-row-on-hover tr:hover td {
 .categorystats {
     display: flex;
     flex-direction: row;
+    align-items: center;
     position: fixed;
     bottom: 16px;
     left: 50%;
@@ -194,14 +199,36 @@ table.highlight-row-on-hover tr:hover td {
     
     @supports (background: conic-gradient(red, green, blue)) {
         .categorystats-piechart {
-          display: block;
-          margin: 16px;
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          background: conic-gradient(lime 40%, yellow 0 70%, red 0);
+            display: block;
+            margin: 16px;
+            width: var(--categorystats-piechart-size);
+            border-radius: 50%;
+            background: conic-gradient(lime 40%, yellow 0 70%, red 0);
+        }
+        .categorystats-piechart:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
         }
     }
+
+@media only screen and (max-width: 1000px) {
+    :root {
+        --categorystats-piechart-size: 150px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    :root {
+        --categorystats-piechart-size: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --categorystats-piechart-size: 0;
+    }
+}
 
 
 /* Mobile */
