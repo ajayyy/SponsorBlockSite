@@ -156,20 +156,23 @@ table th {
     font-variant-numeric: tabular-nums;
 }
 
-table tr:hover td {
+table.highlight-row-on-hover tr:hover td {
     background-color: darken($page-background-color, 8%);
 }
 
 .categorystats {
-    display: block;
+    display: flex;
+    flex-direction: row;
     position: fixed;
-    top: 8px;
-    right: 8px;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
     background: #000;
     box-shadow: 4px 4px 10px #222, 2px 2px 16px #222;
     border-radius: 2px;
     padding: 8px;
     pointer-events: none;
+    opacity: .9;
 }
     .categorystats--hidden {
         display: none;
@@ -182,6 +185,22 @@ table tr:hover td {
     .categorystats .dim {
         opacity: 0.3;
         filter:grayscale(.5);
+    }
+    
+    .categorystats table td,
+    .categorystats table th {
+        padding: 2px 5px;
+    }
+    
+    @supports (background: conic-gradient(red, green, blue)) {
+        .categorystats-piechart {
+          display: block;
+          margin: 16px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: conic-gradient(lime 40%, yellow 0 70%, red 0);
+        }
     }
 
 

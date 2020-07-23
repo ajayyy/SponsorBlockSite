@@ -28,6 +28,17 @@ const IndexPage = () => {
       'Non-Music Section',
     ];
     const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900'];
+    
+    function generateCssConicGradientFromCategoryStats(data) {
+        let lastPercentage = 0;
+        const piechartCode = data.map((d, index) => {
+            const percent = parseFloat(d[1]);
+            const str = `${categoryStatsColors[index]} 0 ${lastPercentage + percent}%`;
+            lastPercentage += percent;
+            return str;
+        });
+        return  `conic-gradient(${piechartCode.join(',')})`;
+    }
 
     const [topUsers, setTopUsers] = useState([]);
 
@@ -131,7 +142,7 @@ const IndexPage = () => {
             </div>
 
             <div className="container-fluid stats-table">
-                <table>
+                <table className="highlight-row-on-hover">
                     <thead>
                         <tr>
                             <th className="rank">Rank</th>
@@ -171,13 +182,13 @@ const IndexPage = () => {
 
                     <tbody>
                         {topUsers.map((value, index) => (
-                            <tr className={`row--${index % 2 ? 'odd' : 'even'}`} key={index}>
+                            <tr className={`row--${index % 2 ? 'odd' : 'even'}`} key={index}
+                              onMouseEnter={_=>{displayCategoryStats(value.categoryStats)}}
+                              onMouseLeave={_=>{hideCategoryStats()}}>
                                 <td className="rank celltype-number">{index + 1}.</td>
                                 <td>{value.userName}</td>
                                 <td
-                                  className="celltype-number has--categorystats"
-                                  onMouseEnter={_=>{displayCategoryStats(value.categoryStats)}}
-                                  onMouseLeave={_=>{hideCategoryStats()}}>
+                                  className="celltype-number has--categorystats">
                                     {value.totalSubmissions.toLocaleString()}
                                 </td>
                                 <td className="celltype-number">{value.minutesSaved}</td>
@@ -207,6 +218,9 @@ const IndexPage = () => {
                     ))}
                     </tbody>
                   </table>
+                  <div className="categorystats-piechart" style={{
+                      background: generateCssConicGradientFromCategoryStats(categoryStats.data)
+                  }}></div>
                 </div>
             </div>
         </Layout>
