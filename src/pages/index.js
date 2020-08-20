@@ -183,7 +183,7 @@ const IndexPage = () => {
                     </p>
 
                     <p className="text-center">
-                        Website rewritten by <a href="https://github.com/jplsek">Jeremy Plsek.</a>
+                        Website rewritten by <a href="https://github.com/jplsek">Jeremy Plsek</a>
                     </p>
 
                     <p>
