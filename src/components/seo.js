@@ -50,6 +50,10 @@ function SEO({ description, lang, meta, title, overwriteTitle }) {
                     content: site.siteMetadata.icon,
                 },
                 {
+                    property: "og:image:url",
+                    content: site.siteMetadata.icon,
+                },
+                {
                     property: "og:type",
                     content: "website",
                 },
