@@ -16,6 +16,7 @@ function SEO({ description, lang, meta, title, overwriteTitle }) {
                         title
                         description
                         author
+                        icon
                     }
                 }
             }
@@ -43,6 +44,10 @@ function SEO({ description, lang, meta, title, overwriteTitle }) {
                 {
                     property: "og:description",
                     content: metaDescription,
+                },
+                {
+                    property: "og:image",
+                    content: site.siteMetadata.icon,
                 },
                 {
                     property: "og:type",
