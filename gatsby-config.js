@@ -4,6 +4,7 @@ module.exports = {
         description:
             "SponsorBlock is a crowdsourced browser extension to skip sponsor segments of YouTube videos.",
         author: "Ajay Ramachandran",
+        icon: "https://sponsor.ajay.app/LogoSponsorBlockSimple256px.png"
     },
     plugins: [
         "gatsby-plugin-react-helmet",

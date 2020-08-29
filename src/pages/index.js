@@ -137,6 +137,13 @@ const IndexPage = () => {
                         >
                             <img src="/iOS.svg" alt="Download for iOS" style={{ height: "30px" }}/>
                         </a>
+
+                        <a 
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#Chromecast"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/chromecast.svg" alt="Download for Chromecast" style={{ height: "30px" }}/>
+                        </a>
                     </div>
 
                     <p>
@@ -176,7 +183,7 @@ const IndexPage = () => {
                     </p>
 
                     <p className="text-center">
-                        Website rewritten by <a href="https://github.com/jplsek">Jeremy Plsek.</a>
+                        Website rewritten by <a href="https://github.com/jplsek">Jeremy Plsek</a>
                     </p>
 
                     <p>
