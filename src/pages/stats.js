@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
+const API_BASE = 'https://sponsor.ajay.app';
+let checkboxShowStats = false;
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
@@ -11,6 +15,31 @@ const IndexPage = () => {
         minutesSaved: 0,
         viewCount: 0,
     });
+    const [categoryStats, setCategoryStats] = useState({
+      visible: false,
+      data: []
+    });
+    
+    const categoryStatsTitles = [
+      'Sponsor',
+      'Intro',
+      'Outro',
+      'Interaction',
+      'Self Promotion',
+      'Non-Music Section',
+    ];
+    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900'];
+    
+    function generateCssConicGradientFromCategoryStats(data) {
+        let lastPercentage = 0;
+        const piechartCode = data.map((d, index) => {
+            const percent = parseFloat(d[1]);
+            const str = `${categoryStatsColors[index]} 0 ${lastPercentage + percent}%`;
+            lastPercentage += percent;
+            return str;
+        });
+        return  `conic-gradient(${piechartCode.join(',')})`;
+    }
 
     const [topUsers, setTopUsers] = useState([]);
 
@@ -25,7 +54,13 @@ const IndexPage = () => {
                     const hours = Math.floor(
                         resultData.minutesSaved[i] / 60
                     );
-
+                    let categoryStats = false;
+                    
+                    if ('categoryStats' in resultData) {
+                        const total = resultData.categoryStats[i].reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+                        categoryStats = resultData.categoryStats[i].map(value => ([value, ((value / total) * 100).toFixed(2)]));
+                    }
+                    
                     transformedData.push({
                         userName: resultData.userNames[i],
                         viewCount: resultData.viewCounts[i],
@@ -34,6 +69,7 @@ const IndexPage = () => {
                             (hours > 0 ? hours + "h " : "") +
                             (resultData.minutesSaved[i] % 60).toFixed(1) +
                             "m",
+                        categoryStats: categoryStats,
                     });
                 }
 
@@ -42,12 +78,22 @@ const IndexPage = () => {
     }
 
     useEffect(() => {
-        fetch("https://sponsor.ajay.app/api/getTotalStats")
+        fetch(API_BASE + "/api/getTotalStats")
             .then(response => response.json())
             .then(resultData => setTotalStats(resultData));
 
-        setTopUserData("https://sponsor.ajay.app/api/getTopUsers?sortType=0");
+        setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
     }, []);
+    
+    const displayCategoryStats = (stats) => {
+      if (stats === false) return;
+      if (!checkboxShowStats) return;
+      setCategoryStats({visible:true, data:stats});
+    };
+    
+    const hideCategoryStats = () => {
+      setCategoryStats({visible:false, data:[]});
+    };
 
     return (
         <Layout>
@@ -95,10 +141,11 @@ const IndexPage = () => {
                 <h2 className="text-center no-bottom-margin">Top Contributors</h2>
 
                 <div className="text-center text-small">Click a column title to change the sort</div>
+                <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show category stats on hover</label></div>
             </div>
 
             <div className="container-fluid stats-table">
-                <table>
+                <table className="highlight-row-on-hover">
                     <thead>
                         <tr>
                             <th className="rank">Rank</th>
@@ -107,7 +154,7 @@ const IndexPage = () => {
                                 className="pointer"
                                 onClick={() =>
                                     setTopUserData(
-                                        "https://sponsor.ajay.app/api/getTopUsers?sortType=2"
+                                        API_BASE + "/api/getTopUsers?sortType=2&categoryStats=true"
                                     )
                                 }
                             >
@@ -117,7 +164,7 @@ const IndexPage = () => {
                                 className="pointer"
                                 onClick={() =>
                                     setTopUserData(
-                                        "https://sponsor.ajay.app/api/getTopUsers?sortType=0"
+                                        API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true"
                                     )
                                 }
                             >
@@ -127,7 +174,7 @@ const IndexPage = () => {
                                 className="pointer"
                                 onClick={() =>
                                     setTopUserData(
-                                        "https://sponsor.ajay.app/api/getTopUsers?sortType=1"
+                                        API_BASE + "/api/getTopUsers?sortType=1&categoryStats=true"
                                     )
                                 }
                             >
@@ -138,16 +185,46 @@ const IndexPage = () => {
 
                     <tbody>
                         {topUsers.map((value, index) => (
-                            <tr key={index}>
-                                <td className="rank">{index + 1}.</td>
+                            <tr className={`row--${index % 2 ? 'odd' : 'even'}`} key={index}
+                              onMouseEnter={_=>{displayCategoryStats(value.categoryStats)}}
+                              onMouseLeave={_=>{hideCategoryStats()}}>
+                                <td className="rank celltype-number">{index + 1}.</td>
                                 <td>{value.userName}</td>
-                                <td>{value.totalSubmissions.toLocaleString()}</td>
-                                <td>{value.minutesSaved}</td>
-                                <td>{value.viewCount.toLocaleString()}</td>
+                                <td
+                                  className="celltype-number has--categorystats">
+                                    {value.totalSubmissions.toLocaleString()}
+                                </td>
+                                <td className="celltype-number">{value.minutesSaved}</td>
+                                <td className="celltype-number">{value.viewCount.toLocaleString()}</td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
+                
+                <div className={classNames('categorystats', {'categorystats--hidden':!categoryStats.visible})}>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th colSpan="2">Submissions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {categoryStats.data.map((data, index) => (
+                      <tr className={classNames({'dim':data[0] === 0})} style={{
+                        color: categoryStatsColors[index]
+                      }} key={index}>
+                        <td>{categoryStatsTitles[index]}</td>
+                        <td className="celltype-number">{data[0]}</td>
+                        <td className="celltype-number">{data[1]}%</td>
+                      </tr>
+                    ))}
+                    </tbody>
+                  </table>
+                  <div className="categorystats-piechart" style={{
+                      background: generateCssConicGradientFromCategoryStats(categoryStats.data)
+                  }}></div>
+                </div>
             </div>
         </Layout>
     );
