@@ -140,8 +140,8 @@ const IndexPage = () => {
 
                 <h2 className="text-center no-bottom-margin">Top Contributors</h2>
 
-                <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} />Show category stats on hover</label></div>
                 <div className="text-center text-small">Click a column title to change the sort</div>
+                <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show category stats on hover</label></div>
             </div>
 
             <div className="container-fluid stats-table">
