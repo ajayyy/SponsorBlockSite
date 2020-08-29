@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const API_BASE = 'https://sponsor.ajay.app';
+let checkboxShowStats = false;
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
@@ -86,6 +87,7 @@ const IndexPage = () => {
     
     const displayCategoryStats = (stats) => {
       if (stats === false) return;
+      if (!checkboxShowStats) return;
       setCategoryStats({visible:true, data:stats});
     };
     
@@ -139,6 +141,7 @@ const IndexPage = () => {
                 <h2 className="text-center no-bottom-margin">Top Contributors</h2>
 
                 <div className="text-center text-small">Click a column title to change the sort</div>
+                <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show stats on hover</label></div>
             </div>
 
             <div className="container-fluid stats-table">
