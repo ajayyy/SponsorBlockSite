@@ -32,8 +32,8 @@ const IndexPage = () => (
 
             <p>
                 Instead of just sending the top reported segment, it finds 
-                all of the overlapping segments. Only one of each group of 
-                overlapping segments will be sent to the user.
+                all of the overlapping segments. Only one segment from
+                each group of overlapping segments will be sent to the user.
             </p>
 
             <h3>Pseudo-random distribution</h3>
