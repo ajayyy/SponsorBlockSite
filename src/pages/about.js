@@ -31,8 +31,8 @@ const IndexPage = () => (
             </p>
 
             <p>
-                Instead of just sending the top reported segment, it will looks 
-                for all the overlapping segments. Only one of each group of 
+                Instead of just sending the top reported segment, it finds 
+                all of the overlapping segments. Only one of each group of 
                 overlapping segments will be sent to the user.
             </p>
 
