@@ -196,6 +196,10 @@ const IndexPage = () => {
                     <p className="text-center">
                         Logo by <a href="https://github.com/munadikieh">@munadikieh</a>
                     </p>
+
+                    <p className="text-center">
+                        <a href="https://gist.github.com/ajayyy/aa9f8ded2b573d4f73a3ffa0ef74f796">Privacy Policy (Human Readable)</a>
+                    </p>
                 </div>
             </div>
         </Layout>
