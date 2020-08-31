@@ -48,9 +48,9 @@ const IndexPage = () => (
                     src="/sqrtFunction.png"
                     alt="Square root function"
                 />
-                This formula makes small amount of votes (under 10), matter a
-                lot, and makes the really large votes slowly not matter as much.
-                This makes a newly submitted sponsor time always possible to be
+                This formula makes the first few votes matter a lot more than
+                votes on a submission that already has a lot of votes.
+                This gives newly submitted segments a better chance of being 
                 sent out to users to get votes. So, most users will get the best
                 submission, but some users will get lesser votes submissions so
                 that they can either be upvoted or downvoted. Submissions with
