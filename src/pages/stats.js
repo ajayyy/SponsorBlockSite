@@ -110,10 +110,6 @@ const IndexPage = () => {
                             <td>{totalStats.apiUsers.toLocaleString()} users</td>
                         </tr>
                         <tr>
-                            <td>Extension Users:</td>
-                            <td>{totalStats.activeUsers.toLocaleString()} users</td>
-                        </tr>
-                        <tr>
                             <td>Contributing Users:</td>
                             <td>{totalStats.userCount.toLocaleString()} users</td>
                         </tr>
