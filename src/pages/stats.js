@@ -9,6 +9,7 @@ let checkboxShowStats = false;
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
+        apiUsers: 0,
         activeUsers: 0,
         userCount: 0,
         totalSubmissions: 0,
@@ -106,7 +107,7 @@ const IndexPage = () => {
                     <tbody>
                         <tr>
                             <td>Active Users:</td>
-                            <td>{totalStats.activeUsers.toLocaleString()} users</td>
+                            <td>{totalStats.apiUsers.toLocaleString()} users</td>
                         </tr>
                         <tr>
                             <td>Contributing Users:</td>
