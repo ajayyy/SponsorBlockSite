@@ -70,7 +70,7 @@ const IndexPage = () => {
                     </p>
 
                     <div className="text-center">
-                        <h2>Download the extension</h2>
+                        <h2>Download</h2>
 
                         <a href="https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone">
                             <img
