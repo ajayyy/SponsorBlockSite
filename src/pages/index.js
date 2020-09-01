@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
-        activeUsers: "Loading",
+        apiUsers: "Loading",
         totalSubmissions: "Loading",
         minutesSaved: "Loading",
     });
@@ -51,7 +51,7 @@ const IndexPage = () => {
 
                     <p>
                         There are currently{" "}
-                        <strong>{totalStats.activeUsers.toLocaleString()}</strong> users who have
+                        <strong>{totalStats.apiUsers.toLocaleString()}</strong> users who have
                         submitted <strong>{totalStats.totalSubmissions.toLocaleString()}</strong>{" "}
                         skip segments, which have saved a total of{" "}
                         <strong>
