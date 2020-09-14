@@ -195,6 +195,10 @@ const IndexPage = () => {
                     </p>
 
                     <p className="text-center">
+                        Neural network moderation powered by <a href="https://github.com/andrewzlee">Andrew Lee{"'"}s</a> <a href="https://github.com/andrewzlee/NeuralBlock">NeuralBlock</a>.
+                    </p>
+
+                    <p className="text-center">
                         Logo by <a href="https://github.com/munadikieh">@munadikieh</a>
                     </p>
 
