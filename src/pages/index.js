@@ -115,34 +115,41 @@ const IndexPage = () => {
                                 style={{ height: "58px" }} />
                         </a>
 
-                        <h3>Unofficial ports</h3>
+                        <h3>3rd Party Ports</h3>
 
                         <a 
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#mpv-media-player"
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#mpv-media-player"
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/mpv.png" alt="Download for MPV" />
                         </a>
 
                         <a 
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#kodi"
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#kodi"
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/kodi.svg" alt="Download for Kodi" style={{ height: "30px" }}/>
                         </a>
 
                         <a 
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#iOS"
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#iOS"
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/iOS.svg" alt="Download for iOS" style={{ height: "30px" }}/>
                         </a>
 
                         <a 
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Unofficial-Ports#Chromecast"
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#Chromecast"
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/chromecast.svg" alt="Download for Chromecast" style={{ height: "30px" }}/>
+                        </a>
+
+                        <a 
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#Safari-macos"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/safari.svg" alt="Download for Safari" style={{ height: "30px" }}/>
                         </a>
                     </div>
 
