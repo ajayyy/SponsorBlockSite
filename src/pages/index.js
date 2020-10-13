@@ -180,7 +180,7 @@ const IndexPage = () => {
                     </p>
 
                     <p className="text-center">
-                        Come chat with us on <a href="https://discord.gg/QnmVMpU">Discord</a>.
+                        Come chat with us on <a href="https://discord.gg/QnmVMpU">Discord</a> or <a href="https://matrix.to/#/+sponsorblock:ajay.app">Matrix</a>.
                     </p>
                     
                     <h4 className="text-center">Credit</h4>

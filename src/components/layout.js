@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 
 import "normalize.css/normalize.css";
 import "./layout.scss";
-import "@fortawesome/fontawesome-free/css/all.css";
+import "fork-awesome/css/fork-awesome.min.css"
 
 const Layout = ({ children }) => {
     return (
@@ -96,13 +96,24 @@ const Layout = ({ children }) => {
                             <img src="/ajay_profile.jpg" alt="Ajay's avatar"></img>
                         </a>
                     </li>
-
+        
                     <li>
                         <a
                             href="https://discord.gg/QnmVMpU"
                             className="nav-link"
+                            title="Discord Invite"
                         >
-                            <i className="fab fa-discord"></i>
+                            <i className="fa fa-discord"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://matrix.to/#/+sponsorblock:ajay.app"
+                            className="nav-link"
+                            title="Matrix Invite"
+                        >
+                            <i className="fa fa-matrix-org"></i>
                         </a>
                     </li>
 
@@ -111,7 +122,7 @@ const Layout = ({ children }) => {
                             href="https://twitter.com/SponsorBlock"
                             className="nav-link"
                         >
-                            <i className="fab fa-twitter"></i>
+                            <i className="fa fa-twitter"></i>
                         </a>
                     </li>
 
@@ -120,7 +131,7 @@ const Layout = ({ children }) => {
                             href="https://github.com/ajayyy/SponsorBlock"
                             className="nav-link"
                         >
-                            <i className="fab fa-github"></i>
+                            <i className="fa fa-github"></i>
                         </a>
                     </li>
                 </ul>
