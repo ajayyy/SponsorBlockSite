@@ -69,6 +69,14 @@ const IndexPage = () => {
                         <Link to="/stats">the leaderboard</Link>.
                     </p>
 
+                    <p style={{fontSize: "0.7em", textAlign: "center"}}>
+                        Unrelated notice: Google is deleting all sites created on the Google Sites site builder. Come{" "}
+                        <a href="https://gist.github.com/ajayyy/965f78ca61f2d6825273a0dd2b2841f8">
+                            help archive it
+                        </a>
+                        .
+                    </p>
+
                     <div className="text-center">
                         <h2>Download</h2>
 
