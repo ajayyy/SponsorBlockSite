@@ -24,22 +24,20 @@ const IndexPage = () => {
     });
     const [totalCategoryStats, setTotalCategoryStats] = useState([]);
 
-    const categoryStatsTitles = [
-      'Sponsor',
-      'Intro',
-      'Outro',
-      'Interaction',
-      'Self Promotion',
-      'Non-Music Section',
-    ];
-    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900'];
-    
+    const categoryStatsColors = {
+        sponsor: '#00d400',
+        intro: '#00ffff',
+        outro: '#0202ed',
+        interaction: '#cc00ff',
+        selfpromo: '#ffff00',
+        music_offtopic: '#ff9900',
+    };
+
     function generateCssConicGradientFromCategoryStats(data) {
         let lastPercentage = 0;
-        const piechartCode = data.map((d, index) => {
-            const percent = parseFloat(d[1]);
-            const str = `${categoryStatsColors[index]} 0 ${lastPercentage + percent}%`;
-            lastPercentage += percent;
+        const piechartCode = data.map((d) => {
+            const str = `${categoryStatsColors[d.category]} 0 ${lastPercentage + d.percentOfTotal}%`;
+            lastPercentage += d.percentOfTotal;
             return str;
         });
         return  `conic-gradient(${piechartCode.join(',')})`;
@@ -51,32 +49,21 @@ const IndexPage = () => {
         return fetch(url)
             .then(response => response.json())
             .then(resultData => {
-                let size = resultData.userNames.length;
+                const transformedData = resultData.map(resultDataItem => {
+                    const transformedItem = {
+                        ...resultDataItem,
+                    };
 
-                const transformedData = [];
-                for (let i = 0; i < size; i++) {
-                    const hours = Math.floor(
-                        resultData.minutesSaved[i] / 60
-                    );
-                    let categoryStats = false;
-                    
-                    if ('categoryStats' in resultData) {
-                        const total = resultData.categoryStats[i].reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-                        categoryStats = resultData.categoryStats[i].map(value => ([value, ((value / total) * 100).toFixed(2)]));
+                    if ('categoryStats' in resultDataItem) {
+                        const total = resultDataItem.categoryStats.reduce((sum, categoryStatsItem) => sum + categoryStatsItem.count, 0);
+                        transformedItem.categoryStats = resultDataItem.categoryStats.map(categoryStatsItem => ({
+                            ...categoryStatsItem,
+                            percentOfTotal: (categoryStatsItem.count / total) * 100
+                        }));
                     }
-                    
-                    transformedData.push({
-                        userName: resultData.userNames[i],
-                        viewCount: resultData.viewCounts[i],
-                        totalSubmissions: resultData.totalSubmissions[i],
-                        minutesSaved:
-                            (hours > 0 ? hours + "h " : "") +
-                            (resultData.minutesSaved[i] % 60).toFixed(1) +
-                            "m",
-                        categoryStats: categoryStats,
-                    });
-                }
 
+                    return transformedItem;
+                });
                 setTopUsers(transformedData);
             });
     }
@@ -129,7 +116,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: 'rank celltype-number',
-                render: (_, index) => (<>{index + 1}</>)
+                render: (_, index) => index + 1
             }
         },
         {
@@ -140,7 +127,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{rowData.userName}</>)
+                render: (rowData) => rowData.userName
             }
         },
         {
@@ -153,7 +140,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{rowData.totalSubmissions.toLocaleString()}</>)
+                render: (rowData) => rowData.totalSubmissions.toLocaleString()
             }
         },
         {
@@ -166,7 +153,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{rowData.minutesSaved}</>)
+                render: (rowData) => minutesToHoursAndMinutes(rowData.minutesSaved)
             }
         },
         {
@@ -179,7 +166,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{rowData.viewCount.toLocaleString()}</>)
+                render: (rowData) => rowData.viewCount.toLocaleString()
             }
         },
     ];
@@ -194,7 +181,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: 'rank celltype-number',
-                render: (_, index) => (<>{index + 1}</>)
+                render: (_, index) => index + 1
             }
         },
         {
@@ -205,7 +192,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{rowData.category}</>)
+                render: (rowData) => rowData.category
             }
         },
         {
@@ -216,7 +203,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{rowData.totalSubmissions.toLocaleString()}</>)
+                render: (rowData) => rowData.totalSubmissions.toLocaleString()
             }
         },
         {
@@ -227,7 +214,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{minutesToHoursAndMinutes(rowData.minutesSaved)}</>)
+                render: (rowData) => minutesToHoursAndMinutes(rowData.minutesSaved)
             }
         },
         {
@@ -238,7 +225,7 @@ const IndexPage = () => {
             },
             cell: {
                 className: null,
-                render: (rowData) => (<>{rowData.viewCount.toLocaleString()}</>)
+                render: (rowData) => rowData.viewCount.toLocaleString()
             }
         },
     ];
@@ -317,13 +304,14 @@ const IndexPage = () => {
                       </tr>
                     </thead>
                     <tbody>
-                    {categoryStats.data.map((data, index) => (
-                      <tr className={classNames({'dim':data[0] === 0})} style={{
-                        color: categoryStatsColors[index]
-                      }} key={index}>
-                        <td>{categoryStatsTitles[index]}</td>
-                        <td className="celltype-number">{data[0]}</td>
-                        <td className="celltype-number">{data[1]}%</td>
+                    {categoryStats.data.map((categoryStatsItem, index) => (
+                      <tr className={classNames({'dim':categoryStatsItem.count === 0})}
+                          style={{ color: categoryStatsColors[categoryStatsItem.category] }}
+                          key={index}
+                      >
+                        <td>{categoryStatsItem.categoryLabel}</td>
+                        <td className="celltype-number">{categoryStatsItem.count}</td>
+                        <td className="celltype-number">{categoryStatsItem.percentOfTotal.toFixed(2)}%</td>
                       </tr>
                     ))}
                     </tbody>
