@@ -70,7 +70,7 @@ const IndexPage = () => {
                     </p>
 
                     <p style={{fontSize: "0.7em", textAlign: "center"}}>
-                        Unrelated notice: Time to recover Flash games and animations are running out. 
+                        Unrelated notice: Time to back up Flash games and animations are running out. 
                         If you know of Flash games not already backed up by {" "}
                         <a href="https://bluemaxima.org/flashpoint/">
                             BlueMaxima's Flashpoint
