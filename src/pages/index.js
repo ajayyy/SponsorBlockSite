@@ -70,11 +70,12 @@ const IndexPage = () => {
                     </p>
 
                     <p style={{fontSize: "0.7em", textAlign: "center"}}>
-                        Unrelated notice: Google is deleting all sites created on the Google Sites site builder. Come{" "}
-                        <a href="https://gist.github.com/ajayyy/965f78ca61f2d6825273a0dd2b2841f8">
-                            help archive it
-                        </a>
-                        .
+                        Unrelated notice: Time to recover Flash games and animations are running out. 
+                        If you know of Flash games not already backed up by {" "}
+                        <a href="https://bluemaxima.org/flashpoint/">
+                            BlueMaxima's Flashpoint
+                        </a>{" "}
+                        , consider helping them out.
                     </p>
 
                     <div className="text-center">
