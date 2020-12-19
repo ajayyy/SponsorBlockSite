@@ -3,6 +3,8 @@ import classNames from "classnames";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import StatisticsTable from "../components/statistics-table";
+import { minutesToHoursAndMinutes } from "../utils";
 
 const API_BASE = 'https://sponsor.ajay.app';
 let checkboxShowStats = false;
@@ -20,23 +22,22 @@ const IndexPage = () => {
       visible: false,
       data: []
     });
-    
-    const categoryStatsTitles = [
-      'Sponsor',
-      'Intro',
-      'Outro',
-      'Interaction',
-      'Self Promotion',
-      'Non-Music Section',
-    ];
-    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900'];
-    
+    const [totalCategoryStats, setTotalCategoryStats] = useState([]);
+
+    const categoryStatsColors = {
+        sponsor: '#00d400',
+        intro: '#00ffff',
+        outro: '#0202ed',
+        interaction: '#cc00ff',
+        selfpromo: '#ffff00',
+        music_offtopic: '#ff9900',
+    };
+
     function generateCssConicGradientFromCategoryStats(data) {
         let lastPercentage = 0;
-        const piechartCode = data.map((d, index) => {
-            const percent = parseFloat(d[1]);
-            const str = `${categoryStatsColors[index]} 0 ${lastPercentage + percent}%`;
-            lastPercentage += percent;
+        const piechartCode = data.map((d) => {
+            const str = `${categoryStatsColors[d.category]} 0 ${lastPercentage + d.percentOfTotal}%`;
+            lastPercentage += d.percentOfTotal;
             return str;
         });
         return  `conic-gradient(${piechartCode.join(',')})`;
@@ -48,34 +49,43 @@ const IndexPage = () => {
         return fetch(url)
             .then(response => response.json())
             .then(resultData => {
-                let size = resultData.userNames.length;
+                const transformedData = resultData.map(resultDataItem => {
+                    const transformedItem = {
+                        ...resultDataItem,
+                    };
 
-                const transformedData = [];
-                for (let i = 0; i < size; i++) {
-                    const hours = Math.floor(
-                        resultData.minutesSaved[i] / 60
-                    );
-                    let categoryStats = false;
-                    
-                    if ('categoryStats' in resultData) {
-                        const total = resultData.categoryStats[i].reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-                        categoryStats = resultData.categoryStats[i].map(value => ([value, ((value / total) * 100).toFixed(2)]));
+                    if ('categoryStats' in resultDataItem) {
+                        const total = resultDataItem.categoryStats.reduce((sum, categoryStatsItem) => sum + categoryStatsItem.count, 0);
+                        transformedItem.categoryStats = resultDataItem.categoryStats.map(categoryStatsItem => ({
+                            ...categoryStatsItem,
+                            percentOfTotal: (categoryStatsItem.count / total) * 100
+                        }));
                     }
-                    
-                    transformedData.push({
-                        userName: resultData.userNames[i],
-                        viewCount: resultData.viewCounts[i],
-                        totalSubmissions: resultData.totalSubmissions[i],
-                        minutesSaved:
-                            (hours > 0 ? hours + "h " : "") +
-                            (resultData.minutesSaved[i] % 60).toFixed(1) +
-                            "m",
-                        categoryStats: categoryStats,
-                    });
-                }
 
+                    return transformedItem;
+                });
                 setTopUsers(transformedData);
             });
+    }
+
+    function sortTotalCategoryStats(sortBy) {
+        const statsCopy = [...totalCategoryStats];
+        statsCopy.sort((a, b) => {
+            if (typeof a[sortBy] === 'string') {
+                return a[sortBy].localeCompare(b[sortBy]);
+            }
+            else {
+                return b[sortBy] - a[sortBy];
+            }
+        });
+        setTotalCategoryStats(statsCopy);
+    }
+
+
+    function setTotalCategoryData(url) {
+        fetch(url)
+            .then(response => response.json())
+            .then(setTotalCategoryStats);
     }
 
     useEffect(() => {
@@ -84,6 +94,7 @@ const IndexPage = () => {
             .then(resultData => setTotalStats(resultData));
 
         setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
+        setTotalCategoryData(API_BASE + "/api/getCategoryStats?sortBy=minutesSaved&order=desc");
     }, []);
     
     const displayCategoryStats = (stats) => {
@@ -95,6 +106,129 @@ const IndexPage = () => {
     const hideCategoryStats = () => {
       setCategoryStats({visible:false, data:[]});
     };
+
+    const topContributorsColumns = [
+        {
+            header: {
+                title: 'Rank',
+                className: 'rank',
+                onClick: null,
+            },
+            cell: {
+                className: 'rank celltype-number',
+                render: (_, index) => index + 1
+            }
+        },
+        {
+            header: {
+                title: 'User name',
+                className: null,
+                onClick: null,
+            },
+            cell: {
+                className: null,
+                render: (rowData) => rowData.userName
+            }
+        },
+        {
+            header: {
+                title: 'Submissions',
+                className: 'pointer',
+                onClick: () => {
+                    setTopUserData(API_BASE + "/api/getTopUsers?sortType=2&categoryStats=true");
+                }
+            },
+            cell: {
+                className: null,
+                render: (rowData) => rowData.totalSubmissions.toLocaleString()
+            }
+        },
+        {
+            header: {
+                title: 'Time Saved',
+                className: 'pointer',
+                onClick: () => {
+                    setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
+                }
+            },
+            cell: {
+                className: null,
+                render: (rowData) => minutesToHoursAndMinutes(rowData.minutesSaved)
+            }
+        },
+        {
+            header: {
+                title: 'Total Skips',
+                className: 'pointer',
+                onClick: () => {
+                    setTopUserData(API_BASE + "/api/getTopUsers?sortType=1&categoryStats=true");
+                }
+            },
+            cell: {
+                className: null,
+                render: (rowData) => rowData.viewCount.toLocaleString()
+            }
+        },
+    ];
+
+
+    const totalCategoryStatsColumns = [
+        {
+            header: {
+                title: 'Rank',
+                className: 'rank',
+                onClick: null,
+            },
+            cell: {
+                className: 'rank celltype-number',
+                render: (_, index) => index + 1
+            }
+        },
+        {
+            header: {
+                title: 'Category',
+                className: 'pointer',
+                onClick: () => sortTotalCategoryStats('category'),
+            },
+            cell: {
+                className: null,
+                render: (rowData) => rowData.category
+            }
+        },
+        {
+            header: {
+                title: 'Submissions',
+                className: 'pointer',
+                onClick: () => sortTotalCategoryStats('totalSubmissions'),
+            },
+            cell: {
+                className: null,
+                render: (rowData) => rowData.totalSubmissions.toLocaleString()
+            }
+        },
+        {
+            header: {
+                title: 'Time Saved',
+                className: 'pointer',
+                onClick: () => sortTotalCategoryStats('minutesSaved'),
+            },
+            cell: {
+                className: null,
+                render: (rowData) => minutesToHoursAndMinutes(rowData.minutesSaved)
+            }
+        },
+        {
+            header: {
+                title: 'Total Skips',
+                className: 'pointer',
+                onClick: () => sortTotalCategoryStats('viewCount'),
+            },
+            cell: {
+                className: null,
+                render: (rowData) => rowData.viewCount.toLocaleString()
+            }
+        },
+    ];
 
     return (
         <Layout>
@@ -139,69 +273,28 @@ const IndexPage = () => {
                     </tbody>
                 </table>
 
+            </div>
+
+            <div className="container-fluid stats-table">
+
+                <h2 className="text-center no-bottom-margin">Overall Category Stats</h2>
+                <StatisticsTable
+                    className="highlight-row-on-hover"
+                    columns={totalCategoryStatsColumns}
+                    data={totalCategoryStats}
+                />
                 <h2 className="text-center no-bottom-margin">Top Contributors</h2>
 
                 <div className="text-center text-small">Click a column title to change the sort</div>
                 <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show category stats on hover</label></div>
-            </div>
+                <StatisticsTable
+                    className="highlight-row-on-hover"
+                    columns={topContributorsColumns}
+                    data={topUsers}
+                    onRowMouseEnter={(_, rowData) => (displayCategoryStats(rowData.categoryStats))}
+                    onRowMouseLeave={() => (hideCategoryStats())}
+                />
 
-            <div className="container-fluid stats-table">
-                <table className="highlight-row-on-hover">
-                    <thead>
-                        <tr>
-                            <th className="rank">Rank</th>
-                            <th>User Name</th>
-                            <th
-                                className="pointer"
-                                onClick={() =>
-                                    setTopUserData(
-                                        API_BASE + "/api/getTopUsers?sortType=2&categoryStats=true"
-                                    )
-                                }
-                            >
-                                Submissions
-                            </th>
-                            <th
-                                className="pointer"
-                                onClick={() =>
-                                    setTopUserData(
-                                        API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true"
-                                    )
-                                }
-                            >
-                                Time Saved
-                            </th>
-                            <th
-                                className="pointer"
-                                onClick={() =>
-                                    setTopUserData(
-                                        API_BASE + "/api/getTopUsers?sortType=1&categoryStats=true"
-                                    )
-                                }
-                            >
-                                Total Skips
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {topUsers.map((value, index) => (
-                            <tr className={`row--${index % 2 ? 'odd' : 'even'}`} key={index}
-                              onMouseEnter={_=>{displayCategoryStats(value.categoryStats)}}
-                              onMouseLeave={_=>{hideCategoryStats()}}>
-                                <td className="rank celltype-number">{index + 1}.</td>
-                                <td>{value.userName}</td>
-                                <td
-                                  className="celltype-number has--categorystats">
-                                    {value.totalSubmissions.toLocaleString()}
-                                </td>
-                                <td className="celltype-number">{value.minutesSaved}</td>
-                                <td className="celltype-number">{value.viewCount.toLocaleString()}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                
                 <div className={classNames('categorystats', {'categorystats--hidden':!categoryStats.visible})}>
                   <table>
                     <thead>
@@ -211,13 +304,14 @@ const IndexPage = () => {
                       </tr>
                     </thead>
                     <tbody>
-                    {categoryStats.data.map((data, index) => (
-                      <tr className={classNames({'dim':data[0] === 0})} style={{
-                        color: categoryStatsColors[index]
-                      }} key={index}>
-                        <td>{categoryStatsTitles[index]}</td>
-                        <td className="celltype-number">{data[0]}</td>
-                        <td className="celltype-number">{data[1]}%</td>
+                    {categoryStats.data.map((categoryStatsItem, index) => (
+                      <tr className={classNames({'dim':categoryStatsItem.count === 0})}
+                          style={{ color: categoryStatsColors[categoryStatsItem.category] }}
+                          key={index}
+                      >
+                        <td>{categoryStatsItem.categoryLabel}</td>
+                        <td className="celltype-number">{categoryStatsItem.count}</td>
+                        <td className="celltype-number">{categoryStatsItem.percentOfTotal.toFixed(2)}%</td>
                       </tr>
                     ))}
                     </tbody>
