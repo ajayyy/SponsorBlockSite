@@ -55,7 +55,7 @@ const IndexPage = () => {
                     const days = Math.floor(
                         resultData.minutesSaved[i] / 60 / 24
                     );
-                    const hours = (resultData.minutesSaved[i] / 60).toFixed(1);
+                    const hours = (resultData.minutesSaved[i] / 60 % 24).toFixed(1);
                     
                     let categoryStats = false;
                     
