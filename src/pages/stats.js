@@ -52,9 +52,11 @@ const IndexPage = () => {
 
                 const transformedData = [];
                 for (let i = 0; i < size; i++) {
-                    const hours = Math.floor(
-                        resultData.minutesSaved[i] / 60
+                    const days = Math.floor(
+                        resultData.minutesSaved[i] / 60 / 24
                     );
+                    const hours = (resultData.minutesSaved[i] / 60 % 24).toFixed(1);
+                    
                     let categoryStats = false;
                     
                     if ('categoryStats' in resultData) {
@@ -67,9 +69,8 @@ const IndexPage = () => {
                         viewCount: resultData.viewCounts[i],
                         totalSubmissions: resultData.totalSubmissions[i],
                         minutesSaved:
-                            (hours > 0 ? hours + "h " : "") +
-                            (resultData.minutesSaved[i] % 60).toFixed(1) +
-                            "m",
+                            (days > 0 ? days + "d " : "") +
+                            (hours > 0 ? hours + "h " : ""),
                         categoryStats: categoryStats,
                     });
                 }
