@@ -17,7 +17,7 @@ const IndexPage = () => (
                 SponsorBlock only has access to youtube.com, so can do much less damage, but it still could do malicious things if someone took over.
             </p>
             
-            <p>I decided to compile a list of these sketchy emails I have received to name and shame these companies. 
+            <p>I decided to compile a list of these sketchy emails I have received. 
                 To be clear I <strong>will never</strong> do anything of this sort, but make sure any extensions you install are from trusted developers and have as few permissions as possible. 
                 Most of these scams wouldn&#39;t even work with SponsorBlock due to lack of permissions, but they spam email all developers anyway.
             </p>
