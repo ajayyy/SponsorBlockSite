@@ -23,7 +23,7 @@ const IndexPage = () => (
             </p>
 
             <h2>From partners@infatica.io (A proxy service (botnet?)):</h2>
-            <a href="https://infatica.io/sdk-monetization/?utm_campaign=1+SDK+N+-+Accept+All">https://infatica.io/sdk-monetization/?utm_campaign=1+SDK+N+-+Accept+All</a>
+            <a href="https://infatica.io/sdk-monetization/?utm_campaign=1+SDK+N+-+Accept+All">Their explanation page</a>
             
             
             <p>Here's the <a href="https://pastebin.com/MXVMmwAx">code</a> for their sdk. 
