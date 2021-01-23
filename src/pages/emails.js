@@ -29,7 +29,6 @@ const IndexPage = () => (
             
             <p>Here's the <a href="https://pastebin.com/MXVMmwAx">code</a> for their sdk. 
                 In the email they told me it was "open", so that should mean it is meant to be public.
-                It is obfuscated. 
             </p>
 
             <img src="https://user-images.githubusercontent.com/12688112/105428261-04d7f180-5c1d-11eb-9d97-9f9be56eecef.png" alt="scam"/>
