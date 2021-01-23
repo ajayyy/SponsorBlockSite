@@ -36,8 +36,9 @@ const IndexPage = () => (
             <img src="https://user-images.githubusercontent.com/12688112/105427987-68155400-5c1c-11eb-8837-cf6574dfea85.png" alt="scam"/>
             <img src="https://user-images.githubusercontent.com/12688112/105427949-52079380-5c1c-11eb-956b-6e9a74d6567a.png" alt="scam"/>
             
-            <h2>From extensionmetric.com (a site that disapeared exactly one month after their email, almost like they weren't planning on paying anything after all)</h2>
+            <h2>From extensionmetric.com</h2>
             <p>
+                The site disapeared exactly one month after their email, almost like they weren't planning on paying anything after all...
                 Here's the <a href="https://pastebin.com/dUXNDfNs">code</a> for their sdk. 
                 This one is FAR worse than infatica. There are some calls to getAllResponseHeaders, which could mean stealing logged in accounts.
             </p>
