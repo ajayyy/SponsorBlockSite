@@ -9,7 +9,7 @@ const IndexPage = () => (
 
         <div className="container">
 
-            <h1>List of emails I have recieved from scammers</h1>
+            <h1>List of emails I have received about inserting malware into my extension</h1>
 
             <p>
                 I've been seeing a lot of stories about extensions getting taken over by unknown developers and becoming malware. 
