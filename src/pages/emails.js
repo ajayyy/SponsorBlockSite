@@ -46,7 +46,11 @@ const IndexPage = () => (
             <img src="https://user-images.githubusercontent.com/12688112/105615192-bb161500-5d9c-11eb-8185-2ff28ac67a1b.png" alt="scam"/>
 
             <h2>From datos.live:</h2>
+            <p>
+                Presentation <a href="datos_acquiring_presentation.pdf">pdf</a>
+            </p>
             <img src="https://user-images.githubusercontent.com/12688112/105609313-6d86b180-5d76-11eb-8eb5-540e2ca76391.png" alt="scam"/>
+            <img src="https://user-images.githubusercontent.com/12688112/106066307-98506d00-60ca-11eb-8bbc-3f43102539a4.png" alt="scam"/>
 
             <h2>From admedia.com:</h2>
             <img src="https://user-images.githubusercontent.com/12688112/105428058-8d09c700-5c1c-11eb-861a-30af42eb7bfe.png" alt="scam"/>
