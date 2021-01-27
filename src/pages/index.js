@@ -148,6 +148,13 @@ const IndexPage = () => {
                         </a>
 
                         <a 
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#android-tv"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/androidtv.png" alt="Download for Android TV" style={{ height: "30px" }}/>
+                        </a>
+
+                        <a 
                             href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#Chromecast"
                             style={{ paddingLeft: "15px" }}
                         >
