@@ -69,15 +69,6 @@ const IndexPage = () => {
                         <Link to="/stats">the leaderboard</Link>.
                     </p>
 
-                    <p style={{fontSize: "0.7em", textAlign: "center"}}>
-                        Unrelated notice: Time to back up Flash games and animations is running out. 
-                        If you know of Flash games not already backed up by {" "}
-                        <a href="https://bluemaxima.org/flashpoint/">
-                            BlueMaxima's Flashpoint
-                        </a>{" "}
-                        , consider helping them out.
-                    </p>
-
                     <div className="text-center">
                         <h2>Download</h2>
 
@@ -197,6 +188,10 @@ const IndexPage = () => {
 
                     <p className="text-center">
                         Come chat with us on <a href="https://discord.gg/QnmVMpU">Discord</a> or <a href="https://matrix.to/#/+sponsorblock:ajay.app">Matrix</a>.
+                    </p>
+
+                    <p style={{fontSize: "0.7em", textAlign: "center"}}>
+                        SponsorBlock works best alongside YouTube Premium and uBlock Origin.
                     </p>
                     
                     <h4 className="text-center">Credit</h4>
