@@ -13,14 +13,16 @@ const IndexPage = () => (
             <p>
                 One-time donation: <a href="https://paypal.me/ajayyy">Paypal</a>
             </p>
+
+            <hr noshade>
     
-            <h3>Creators</h3>
+            <h4>Creators</h4>
 
             <p>
                 Consider helping out the creators of videos you watch by donating to their crowdfunding campaigns, or subscribing to services such as YouTube Premium.
             </p>
     
-            <h3>Contributors</h3>
+            <h4>Contributors</h4>
     
             <p>
                 Also check out all the other contributors who have helped out with this project; 
