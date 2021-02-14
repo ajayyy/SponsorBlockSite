@@ -14,7 +14,7 @@ const IndexPage = () => (
                 One-time donation: <a href="https://paypal.me/ajayyy">Paypal</a>
             </p>
 
-            <hr noshade>
+            <hr noshade/>
     
             <h4>Creators</h4>
 
