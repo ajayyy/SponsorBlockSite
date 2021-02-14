@@ -25,7 +25,7 @@ const IndexPage = () => (
             <h4>Contributors</h4>
     
             <p>
-                Also check out all the other contributors who have helped out with this project; 
+                Also check out all the other contributors who have helped out with this project;{' '}
                 <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">SponsorBlock contributors</a>, {' '}
                 <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">SponsorBlockServer contributors</a> and {' '}
                 <a href="https://github.com/ajayyy/SponsorBlockSite/graphs/contributors">SponsorBlockSite contributors</a> such 
