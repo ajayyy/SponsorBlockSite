@@ -32,7 +32,7 @@ const IndexPage = () => (
             </p>
     
             <p>
-                Also, all of the <a href="/stats">segment submitters</href>.
+                Also, all of the <a href="/stats">segment submitters</a>.
             </p>
         </div>
     </Layout>
