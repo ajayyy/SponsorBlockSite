@@ -80,7 +80,7 @@ const IndexPage = () => {
     }
 
     useEffect(() => {
-        fetch(API_BASE + "/api/getTotalStats")
+        fetch(API_BASE + "/api/getTotalStats?countContributingUsers=true")
             .then(response => response.json())
             .then(resultData => setTotalStats(resultData));
 
