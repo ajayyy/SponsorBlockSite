@@ -84,7 +84,7 @@ const IndexPage = () => {
             .then(response => response.json())
             .then(resultData => setTotalStats(resultData));
 
-        setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
+        //setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
     }, []);
     
     const displayCategoryStats = (stats) => {
@@ -142,6 +142,7 @@ const IndexPage = () => {
 
                 <h2 className="text-center no-bottom-margin">Top Contributors</h2>
 
+                <div className="text-center text-small">Leaderboarded disabled temporarily</div>
                 <div className="text-center text-small">Click a column title to change the sort</div>
                 <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show category stats on hover</label></div>
             </div>
