@@ -166,7 +166,7 @@ const IndexPage = () => {
                             source code
                         </a>{" "}
                         is fully open and the{" "}
-                        <a href="https://sponsor.ajay.app/database.db">
+                        <a href="https://sponsor.ajay.app/database">
                             database
                         </a>{" "}
                         can be downloaded by anyone
