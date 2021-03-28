@@ -65,7 +65,7 @@ const IndexPage = () => {
                                 ? totalStats.minutesSaved
                                 : (totalStats.minutesSaved / 60 / 24 % 365).toFixed(2)}
                         </strong>{" "}
-                        days of people's lives. Check out the{" "}
+                        days of people's lives. Check out{" "}
                         <Link to="/stats">the leaderboard</Link>.
                     </p>
 
