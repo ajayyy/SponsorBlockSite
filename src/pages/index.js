@@ -169,11 +169,7 @@ const IndexPage = () => {
                         <a href="https://sponsor.ajay.app/database">
                             database
                         </a>{" "}
-                        can be downloaded by anyone
-                        {" "}
-                        <a href="https://github.com/ajayyy/SponsorBlock/wiki/Database-and-API-License">
-                            (License)
-                        </a>.
+                        can be downloaded by anyone.
                         I want to keep this as open
                         as possible! You can view the docs for the{" "}
                         <a href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs">
