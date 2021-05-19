@@ -37,7 +37,10 @@ const IndexPage = () => {
                         SponsorBlock is an open-source crowdsourced browser extension and open API 
                         for skipping sponsor segments in YouTube videos. Users submit
                         when a sponsor happens from the extension, and the
-                        extension automatically skips sponsors it knows about.
+                        extension automatically skips sponsors it knows about using a{" "}
+                        <a href="https://github.com/ajayyy/SponsorBlockServer/issues/25">
+                            privacy preserving query system
+                        </a>.{" "}
                         It also supports skipping other categories, such as intros, outros and reminders to subscribe.
                     </p>
 
