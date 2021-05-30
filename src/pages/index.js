@@ -186,7 +186,7 @@ const IndexPage = () => {
                     </p>
 
                     <p className="text-center">
-                        Come chat with us on <a href="https://discord.gg/QnmVMpU">Discord</a> or <a href="https://matrix.to/#/+sponsorblock:ajay.app">Matrix</a>.
+                        Come chat with us on <a href="https://discord.gg/QnmVMpU">Discord</a> or <a href="https://matrix.to/#/#sponsor:ajay.app?via=ajay.app&via=matrix.org&via=mozilla.org">Matrix</a>.
                     </p>
 
                     <p style={{fontSize: "0.7em", textAlign: "center"}}>
