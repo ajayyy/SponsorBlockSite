@@ -109,7 +109,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://matrix.to/#/+sponsorblock:ajay.app"
+                            href="https://matrix.to/#/#sponsor:ajay.app?via=ajay.app&via=matrix.org&via=mozilla.org"
                             className="nav-link"
                             title="Matrix Invite"
                         >
