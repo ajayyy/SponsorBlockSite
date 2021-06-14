@@ -151,7 +151,7 @@ const IndexPage = () => {
 
             </div>
 
-            <div className="container-fluid stats-table">
+            <div className="container-fluid stats-table" style={{"display": "none"}}>
                 <table className="highlight-row-on-hover">
                     <thead>
                         <tr>
