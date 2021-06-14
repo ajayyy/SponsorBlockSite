@@ -140,11 +140,15 @@ const IndexPage = () => {
                     </tbody>
                 </table>
 
-                <h2 className="text-center no-bottom-margin">Top Contributors</h2>
+                <div style={{"display": "none"}}>
 
-                <h3 className="text-center text-small">Leaderboard disabled temporarily</h3>
-                <div className="text-center text-small">Click a column title to change the sort</div>
-                <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show category stats on hover</label></div>
+                    <h2 className="text-center no-bottom-margin">Top Contributors</h2>
+
+                    <h3 className="text-center text-small">Leaderboard disabled temporarily</h3>
+                    <div className="text-center text-small">Click a column title to change the sort</div>
+                    <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show category stats on hover</label></div>
+                </div>
+
             </div>
 
             <div className="container-fluid stats-table">
