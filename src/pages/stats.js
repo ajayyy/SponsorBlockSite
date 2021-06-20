@@ -84,7 +84,7 @@ const IndexPage = () => {
             .then(response => response.json())
             .then(resultData => setTotalStats(resultData));
 
-        //setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
+        setTopUserData(API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true");
     }, []);
     
     const displayCategoryStats = (stats) => {
@@ -140,18 +140,17 @@ const IndexPage = () => {
                     </tbody>
                 </table>
 
-                <div style={{"display": "none"}}>
+                <div>
 
                     <h2 className="text-center no-bottom-margin">Top Contributors</h2>
 
-                    <h3 className="text-center text-small">Leaderboard disabled temporarily</h3>
                     <div className="text-center text-small">Click a column title to change the sort</div>
                     <div className="text-center text-small"><label><input type="checkbox" value={checkboxShowStats} onChange={event=>{checkboxShowStats=event.target.checked}} /> Show category stats on hover</label></div>
                 </div>
 
             </div>
 
-            <div className="container-fluid stats-table" style={{"display": "none"}}>
+            <div className="container-fluid stats-table">
                 <table className="highlight-row-on-hover">
                     <thead>
                         <tr>
