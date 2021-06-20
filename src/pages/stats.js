@@ -28,8 +28,9 @@ const IndexPage = () => {
       'Interaction',
       'Self Promotion',
       'Non-Music Section',
+      'Preview',
     ];
-    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900'];
+    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900', '#008fd6'];
     
     function generateCssConicGradientFromCategoryStats(data) {
         let lastPercentage = 0;
