@@ -156,7 +156,7 @@ const IndexPage = () => {
                         </a>
 
                         <a 
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#Safari-macos"
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/Safari"
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/safari.svg" alt="Download for Safari" style={{ height: "30px" }}/>
