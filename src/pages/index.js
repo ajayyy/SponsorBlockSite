@@ -103,6 +103,13 @@ const IndexPage = () => {
                             />
                         </a>
 
+                        <a 
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/Safari"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/safari.svg" alt="Download for Safari" style={{ height: "58px" }}/>
+                        </a>
+
                         <a
                             href="https://github.com/ajayyy/SponsorBlock/wiki/Opera"
                             style={{ paddingLeft: "15px" }}
@@ -153,13 +160,6 @@ const IndexPage = () => {
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/chromecast.svg" alt="Download for Chromecast" style={{ height: "30px" }}/>
-                        </a>
-
-                        <a 
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Safari"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img src="/safari.svg" alt="Download for Safari" style={{ height: "30px" }}/>
                         </a>
                     </div>
 
