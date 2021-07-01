@@ -38,7 +38,7 @@ const IndexPage = () => {
                         for skipping sponsor segments in YouTube videos. Users submit
                         when a sponsor happens from the extension, and the
                         extension automatically skips sponsors it knows about using a{" "}
-                        <a href="https://github.com/ajayyy/SponsorBlockServer/issues/25">
+                        <a href="https://github.com/ajayyy/SponsorBlock/wiki/K-Anonymity">
                             privacy preserving query system
                         </a>.{" "}
                         It also supports skipping other categories, such as intros, outros and reminders to subscribe.
