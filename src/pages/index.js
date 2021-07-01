@@ -220,7 +220,8 @@ const IndexPage = () => {
                     </p>
 
                     <p className="text-center">
-                        <a href="https://gist.github.com/ajayyy/aa9f8ded2b573d4f73a3ffa0ef74f796">Privacy Policy (Human Readable)</a>
+                        <a href="https://gist.github.com/ajayyy/aa9f8ded2b573d4f73a3ffa0ef74f796">Privacy Policy (Human Readable)</a>{", "}
+                        <a href="https://gist.github.com/ajayyy/9e8100f069348e0bc062641f34d6af12">Terms of Use</a>
                     </p>
                 </div>
             </div>
