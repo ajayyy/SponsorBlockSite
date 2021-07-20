@@ -11,7 +11,7 @@ const IndexPage = () => (
             <h1>Donate</h1>
 
             <p>
-                One-time donation: <a href="https://github.com/sponsors/ajayyy-org">GitHub (No Fee)</a>, <a href="https://paypal.me/ajayyy">Paypal (Medium Fee)</a>
+                One-time donation: <a href="https://github.com/sponsors/ajayyy-org?frequency=one-time">GitHub (No Fee)</a>, <a href="https://paypal.me/ajayyy">Paypal (Medium Fee)</a>
             </p>
     
             <p>
