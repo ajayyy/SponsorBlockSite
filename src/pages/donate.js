@@ -11,11 +11,11 @@ const IndexPage = () => (
             <h1>Donate</h1>
 
             <p>
-                One-time donation: <a href="https://paypal.me/ajayyy">Paypal</a>
+                One-time donation: <a href="https://github.com/sponsors/ajayyy-org">GitHub (No Fee)</a>, <a href="https://paypal.me/ajayyy">Paypal (Medium Fee)</a>
             </p>
     
             <p>
-                Recurring: <a href="https://www.patreon.com/ajayyy">Patreon</a>
+                Recurring: <a href="https://github.com/sponsors/ajayyy-org">GitHub (No Fee)</a>, <a href="https://www.patreon.com/ajayyy">Patreon (High Fee)</a>
             </p>
 
             <hr noshade/>
