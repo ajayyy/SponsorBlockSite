@@ -31,7 +31,7 @@ const IndexPage = () => {
       'Preview',
       'Highlight',
     ];
-    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900', '#008fd6'];
+    const categoryStatsColors = ['#00d400','#00ffff','#0202ed','#cc00ff','#ffff00','#ff9900', '#008fd6', '#ff1684'];
     
     function generateCssConicGradientFromCategoryStats(data) {
         let lastPercentage = 0;
