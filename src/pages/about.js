@@ -159,7 +159,7 @@ const IndexPage = () => (
                 Thanks to all <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">SponsorBlock contributors</a> and {' '}
                 <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">SponsorBlockServer contributors</a> such 
                 as <a href="https://github.com/NDevTK">NDev</a>, <a href="https://github.com/Joe-Dowd">Joe Dowd</a>,{' '}
-                <a href="https://github.com/bershanskiy">Anton Bershanskiy</a> and more.
+                <a href="https://mchang.name/">Michael Chang</a> and more.
             </p>
 
             <p>
