@@ -58,8 +58,6 @@ const IndexPage = () => {
 
     const [isTotalStatsLoading, setIsTotalStatsLoading] = useState(true);
 
-    //const [isTopUsersLoading, setIsTopUsersLoading] = useState(false);
-
     function setTopUserData(url, clickedElement) {
         return fetch(url)
             .then(response => response.json())
