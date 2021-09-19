@@ -67,6 +67,14 @@ const IndexPage = () => {
                 let size = resultData.userNames.length;
 
                 if (clickedElement) {
+                    [
+                        ...document.getElementsByClassName(
+                            "sorted"
+                        ),
+                    ].forEach(el =>
+                        el.classList.remove("sorted")
+                    );
+                    clickedElement.classList.add("sorted");
                     clickedElement.classList.remove("sort-loading");
                 }
 
@@ -248,10 +256,7 @@ const IndexPage = () => {
                                     ].forEach(el =>
                                         el.classList.remove("sorted")
                                     );
-                                    e.target.classList.add(
-                                        "sort-loading",
-                                        "sorted"
-                                    );
+                                    e.target.classList.add("sort-loading");
                                     setTopUserData(
                                         API_BASE +
                                             "/api/getTopUsers?sortType=2&categoryStats=true",
@@ -273,10 +278,7 @@ const IndexPage = () => {
                                     ].forEach(el =>
                                         el.classList.remove("sorted")
                                     );
-                                    e.target.classList.add(
-                                        "sort-loading",
-                                        "sorted"
-                                    );
+                                    e.target.classList.add("sort-loading");
                                     setTopUserData(
                                         API_BASE +
                                             "/api/getTopUsers?sortType=0&categoryStats=true",
@@ -298,10 +300,7 @@ const IndexPage = () => {
                                     ].forEach(el =>
                                         el.classList.remove("sorted")
                                     );
-                                    e.target.classList.add(
-                                        "sort-loading",
-                                        "sorted"
-                                    );
+                                    e.target.classList.add("sort-loading");
                                     setTopUserData(
                                         API_BASE +
                                             "/api/getTopUsers?sortType=1&categoryStats=true",
