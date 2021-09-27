@@ -43,7 +43,8 @@ const IndexPage = () => {
                             privacy preserving query system
                         </a>
                         . It also supports skipping other categories, such as
-                        intros, outros and reminders to subscribe.
+                        intros, outros and reminders to subscribe, and skipping
+                        to the point with highlight.
                     </p>
 
                     <p>
