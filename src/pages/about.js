@@ -13,8 +13,7 @@ const IndexPage = () => (
             <p>
                 When you visit a YouTube video, it will check the database to
                 see if anyone has made any submissions for the video. If so, the
-                segment will automatically get skipped when you reach
-                it.
+                segment will automatically get skipped when you reach it.
             </p>
 
             <div className="text-center">
@@ -31,16 +30,16 @@ const IndexPage = () => (
             </p>
 
             <p>
-                Instead of just sending the top reported segment, it finds 
-                all of the overlapping segments. Only one segment from
-                each group of overlapping segments will be sent to the user.
+                Instead of just sending the top reported segment, it finds all
+                of the overlapping segments. Only one segment from each group of
+                overlapping segments will be sent to the user.
             </p>
 
             <h3>Pseudo-random distribution</h3>
 
             <p>
-                To prevent one submission with a lot of votes never being able 
-                to be replaced, I decided to use a weighted random distribution 
+                To prevent one submission with a lot of votes never being able
+                to be replaced, I decided to use a weighted random distribution
                 based on the equation on the right.
                 <br />
                 <img
@@ -49,9 +48,9 @@ const IndexPage = () => (
                     alt="Square root function"
                 />
                 This formula makes the first few votes matter a lot more than
-                votes on a submission that already has a lot of votes.
-                This gives newly submitted segments a better chance of being 
-                sent out to users to get votes. So, most users will get the best
+                votes on a submission that already has a lot of votes. This
+                gives newly submitted segments a better chance of being sent out
+                to users to get votes. So, most users will get the best
                 submission, but some users will get lesser votes submissions so
                 that they can either be upvoted or downvoted. Submissions with
                 less than -1 votes are ignored entirely.
@@ -73,13 +72,14 @@ const IndexPage = () => (
                 popup. The button in the YouTube player can be hidden. You click
                 once to indicate the start of a segment, then click again to
                 indicate the end. You can submit as many segments as there are
-                in the video. Make sure to choose the correct category for each segment.
+                in the video. Make sure to choose the correct category for each
+                segment.
             </p>
 
             <h3>What data is stored?</h3>
 
             <p>
-                The bare minimum. Check {" "}
+                The bare minimum. Check{" "}
                 <a href="https://gist.github.com/ajayyy/aa9f8ded2b573d4f73a3ffa0ef74f796">
                     this list
                 </a>{" "}
@@ -104,12 +104,12 @@ const IndexPage = () => (
                 database can be downloaded by anyone. The database may even be
                 automatically backed up by archive.org! The database will always
                 be available{" "}
-                <a href="https://api.sponsor.ajay.app/database.db">here</a>. It is a
-                sqlite database and can be opened in any sqlite database reading
-                program. Certain sensitive info is not in this database and is
-                not public such as individual votes (not vote counts) and hashed IP
-                addresses. That information isn't needed by anyone else, only
-                the server.
+                <a href="https://api.sponsor.ajay.app/database.db">here</a>. It
+                is a sqlite database and can be opened in any sqlite database
+                reading program. Certain sensitive info is not in this database
+                and is not public such as individual votes (not vote counts) and
+                hashed IP addresses. That information isn't needed by anyone
+                else, only the server.
             </p>
 
             <h3>When was this started</h3>
@@ -152,13 +152,21 @@ const IndexPage = () => (
             <h4>Credit</h4>
 
             <p>
-                Built and maintained by <a href="https://ajay.app/">Ajay Ramachandran</a>
+                Built and maintained by{" "}
+                <a href="https://ajay.app/">Ajay Ramachandran</a>
             </p>
 
             <p>
-                Thanks to all <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">SponsorBlock contributors</a> and {' '}
-                <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">SponsorBlockServer contributors</a> such 
-                as <a href="https://github.com/NDevTK">NDev</a>, <a href="https://github.com/Joe-Dowd">Joe Dowd</a>,{' '}
+                Thanks to all{" "}
+                <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">
+                    SponsorBlock contributors
+                </a>{" "}
+                and{" "}
+                <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">
+                    SponsorBlockServer contributors
+                </a>{" "}
+                such as <a href="https://github.com/NDevTK">NDev</a>,{" "}
+                <a href="https://github.com/Joe-Dowd">Joe Dowd</a>,{" "}
                 <a href="https://mchang.name/">Michael Chang</a> and more.
             </p>
 

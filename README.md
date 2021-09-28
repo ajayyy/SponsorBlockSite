@@ -32,6 +32,6 @@ This will create a folder called `public`, which will contain a statically gener
 
 You can then use `npm run serve` to preview the website before deployment.
 
-___________________________________________________
+---
 
 Thanks for the rewrite [@jplsek](https://github.com/jplsek)!

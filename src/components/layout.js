@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 
 import "normalize.css/normalize.css";
 import "./layout.scss";
-import "fork-awesome/css/fork-awesome.min.css"
+import "fork-awesome/css/fork-awesome.min.css";
 
 const Layout = ({ children }) => {
     return (
@@ -92,11 +92,13 @@ const Layout = ({ children }) => {
                             className="nav-link text-small profile"
                         >
                             Created by Ajay Ramachandran
-
-                            <img src="/ajay_profile.jpg" alt="Ajay's avatar"></img>
+                            <img
+                                src="/ajay_profile.jpg"
+                                alt="Ajay's avatar"
+                            ></img>
                         </a>
                     </li>
-        
+
                     <li>
                         <a
                             href="https://discord.gg/QnmVMpU"
