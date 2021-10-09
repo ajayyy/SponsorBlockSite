@@ -68,7 +68,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Guidelines"
+                            href="https://wiki.sponsor.ajay.app/w/Guidelines"
                             className="nav-link"
                         >
                             Guidelines
@@ -77,7 +77,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs"
+                            href="https://wiki.sponsor.ajay.app/w/API_Docs"
                             className="nav-link"
                         >
                             API
@@ -101,7 +101,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://discord.gg/QnmVMpU"
+                            href="https://discord.gg/SponsorBlock"
                             className="nav-link"
                             title="Discord Invite"
                         >

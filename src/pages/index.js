@@ -206,7 +206,7 @@ const IndexPage = () => {
                         <a href="https://sponsor.ajay.app/database">database</a>{" "}
                         can be downloaded by anyone. I want to keep this as open
                         as possible! You can view the docs for the{" "}
-                        <a href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs">
+                        <a href="https://wiki.sponsor.ajay.app/w/API_Docs">
                             public API here
                         </a>
                         .
@@ -218,7 +218,7 @@ const IndexPage = () => {
 
                     <p className="text-center">
                         Come chat with us on{" "}
-                        <a href="https://discord.gg/QnmVMpU">Discord</a> or{" "}
+                        <a href="https://discord.gg/SponsorBlock">Discord</a> or{" "}
                         <a href="https://matrix.to/#/#sponsor:ajay.app?via=ajay.app&via=matrix.org&via=mozilla.org">
                             Matrix
                         </a>
