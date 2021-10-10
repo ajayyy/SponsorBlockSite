@@ -137,8 +137,8 @@ const IndexPage = () => (
 
             <p>
                 Feel free to join this Discord:{" "}
-                <a href="https://discord.gg/QnmVMpU">
-                    https://discord.gg/QnmVMpU
+                <a href="https://discord.gg/SponsorBlock">
+                    https://discord.gg/SponsorBlock
                 </a>
             </p>
 
