@@ -143,6 +143,17 @@ const IndexPage = () => {
                             />
                         </a>
 
+                        <a
+                            href="https://github.com/ajayyy/SponsorBlock/wiki/iOS"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img
+                                src="/iOS.svg"
+                                alt="Download for iOS"
+                                style={{ height: "58px" }}
+                            />
+                        </a>
+
                         <h3>3rd Party Ports</h3>
 
                         <a
@@ -159,17 +170,6 @@ const IndexPage = () => {
                             <img
                                 src="/kodi.svg"
                                 alt="Download for Kodi"
-                                style={{ height: "30px" }}
-                            />
-                        </a>
-
-                        <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#iOS"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img
-                                src="/iOS.svg"
-                                alt="Download for iOS"
                                 style={{ height: "30px" }}
                             />
                         </a>
