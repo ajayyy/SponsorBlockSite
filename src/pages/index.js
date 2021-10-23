@@ -148,7 +148,7 @@ const IndexPage = () => {
                             style={{ paddingLeft: "15px" }}
                         >
                             <img
-                                src="/iOS.svg"
+                                src="/IOS_logo.png"
                                 alt="Download for iOS"
                                 style={{ height: "58px" }}
                             />
