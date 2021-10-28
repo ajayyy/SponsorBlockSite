@@ -207,7 +207,11 @@ const IndexPage = () => {
                         can be downloaded by anyone. I want to keep this as open
                         as possible! You can view the docs for the{" "}
                         <a href="https://wiki.sponsor.ajay.app/w/API_Docs">
-                            public API here
+                            public API
+                        </a>{" "}
+                        or{" "}
+                        <a href="https://github.com/mchangrh/sb-mirror">
+                            host your own mirror
                         </a>
                         .
                     </p>
