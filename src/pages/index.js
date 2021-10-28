@@ -211,7 +211,7 @@ const IndexPage = () => {
                         </a>{" "}
                         or{" "}
                         <a href="https://github.com/mchangrh/sb-mirror">
-                            host your own mirror
+                            host a mirror
                         </a>
                         .
                     </p>
