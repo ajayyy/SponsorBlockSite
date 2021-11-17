@@ -81,7 +81,7 @@ function SEO({ description, lang, meta, title, overwriteTitle }) {
 SEO.defaultProps = {
     lang: "en",
     meta: [],
-    description: ""
+    description: "",
 };
 
 SEO.propTypes = {
@@ -89,7 +89,7 @@ SEO.propTypes = {
     lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string.isRequired,
-    overwriteTitle: PropTypes.string
+    overwriteTitle: PropTypes.string,
 };
 
 export default SEO;

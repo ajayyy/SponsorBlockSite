@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 
 import "normalize.css/normalize.css";
 import "./layout.scss";
-import "fork-awesome/css/fork-awesome.min.css"
+import "fork-awesome/css/fork-awesome.min.css";
 
 const Layout = ({ children }) => {
     return (
@@ -68,7 +68,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Guidelines"
+                            href="https://wiki.sponsor.ajay.app/w/Guidelines"
                             className="nav-link"
                         >
                             Guidelines
@@ -77,7 +77,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/API-Docs"
+                            href="https://wiki.sponsor.ajay.app/w/API_Docs"
                             className="nav-link"
                         >
                             API
@@ -92,14 +92,16 @@ const Layout = ({ children }) => {
                             className="nav-link text-small profile"
                         >
                             Created by Ajay Ramachandran
-
-                            <img src="/ajay_profile.jpg" alt="Ajay's avatar"></img>
+                            <img
+                                src="/ajay_profile.jpg"
+                                alt="Ajay's avatar"
+                            ></img>
                         </a>
                     </li>
-        
+
                     <li>
                         <a
-                            href="https://discord.gg/QnmVMpU"
+                            href="https://discord.gg/SponsorBlock"
                             className="nav-link"
                             title="Discord Invite"
                         >
