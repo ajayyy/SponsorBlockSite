@@ -12,11 +12,11 @@ const IndexPage = () => {
         minutesSaved: "Loading",
     });
 
-    //useEffect(() => {
-    //    fetch("https://sponsor.ajay.app/api/getTotalStats")
-    //        .then(response => response.json())
-    //        .then(resultData => setTotalStats(resultData));
-    //}, []);
+    useEffect(() => {
+        fetch("https://sponsor.ajay.app/api/getTotalStats")
+            .then(response => response.json())
+            .then(resultData => setTotalStats(resultData));
+    }, []);
 
     return (
         <Layout>
@@ -55,7 +55,7 @@ const IndexPage = () => {
                         for server status.
                     </p>
 
-                    {/**<p>
+                    <p>
                         There are currently{" "}
                         <strong>{totalStats.apiUsers.toLocaleString()}</strong>{" "}
                         users who have submitted{" "}
@@ -81,7 +81,7 @@ const IndexPage = () => {
                         </strong>{" "}
                         days of people's lives. Check out{" "}
                         <Link to="/stats">the leaderboard</Link>.
-                    </p>*/}
+                    </p>
 
                     <div className="text-center">
                         <h2>Download</h2>
