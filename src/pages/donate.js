@@ -16,6 +16,7 @@ const IndexPage = () => (
                     GitHub (No Fee)
                 </a>
                 , <a href="https://paypal.me/ajayyy">Paypal (Medium Fee)</a>
+                , <a href="bitcoin:bc1qvnjvuqycefz593pu6f2vpngml8ld9wjqd5qcus">BTC</a>
             </p>
 
             <p>
