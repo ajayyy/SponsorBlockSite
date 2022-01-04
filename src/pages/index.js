@@ -289,6 +289,10 @@ const IndexPage = () => {
                         <a href="https://gist.github.com/ajayyy/9e8100f069348e0bc062641f34d6af12">
                             Terms of Use
                         </a>
+                        {", "}
+                        <a href="donate">
+                            Donate
+                        </a>
                     </p>
                 </div>
             </div>
