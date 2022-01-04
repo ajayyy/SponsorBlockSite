@@ -30,6 +30,7 @@ const IndexPage = () => {
         "Non-Music Section",
         "Preview",
         "Highlight",
+        "Filler",
     ];
     const categoryStatsColors = [
         "#00d400",
@@ -40,6 +41,7 @@ const IndexPage = () => {
         "#ff9900",
         "#008fd6",
         "#ff1684",
+        "#6600ff",
     ];
 
     function generateCssConicGradientFromCategoryStats(data) {
