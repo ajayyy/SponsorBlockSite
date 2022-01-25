@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
@@ -20,7 +20,7 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <SEO
+            <Seo
                 title="Home"
                 overwriteTitle="SponsorBlock - Skip over YouTube Sponsors - Sponsorship Skipper"
             />

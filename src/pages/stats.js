@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const API_BASE = "https://sponsor.ajay.app";
 let endpoint = "/api/getTopUsers?categoryStats=true";
@@ -147,7 +147,7 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <SEO title="Stats" />
+            <Seo title="Stats" />
 
             <div className="container">
                 <h2 className="text-center">Overall Stats</h2>
