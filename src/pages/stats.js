@@ -5,6 +5,9 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const API_BASE = "https://sponsor.ajay.app";
+let endpoint = "/api/getTopUsers?categoryStats=true";
+let sortType = 0;
+let category = "all";
 let checkboxShowStats = false;
 
 const IndexPage = () => {
@@ -60,7 +63,10 @@ const IndexPage = () => {
 
     const [isTotalStatsLoading, setIsTotalStatsLoading] = useState(true);
 
-    function setTopUserData(url, clickedElement) {
+    function setTopUserData(clickedElement) {
+        const url = new URL(`${API_BASE}${endpoint}`);
+        url.searchParams.append("sortType", sortType);
+        url.searchParams.append("category", category);
         return fetch(url)
             .then(response => response.json())
             .then(resultData => {
@@ -126,10 +132,7 @@ const IndexPage = () => {
                 setIsTotalStatsLoading(false);
                 setTotalStats(resultData);
             });
-
-        setTopUserData(
-            API_BASE + "/api/getTopUsers?sortType=0&categoryStats=true"
-        );
+        setTopUserData();
     }, []);
 
     const displayCategoryStats = stats => {
@@ -228,11 +231,41 @@ const IndexPage = () => {
                             <input
                                 type="checkbox"
                                 value={checkboxShowStats}
-                                onChange={event => {
-                                    checkboxShowStats = event.target.checked;
+                                onChange={e => {
+                                    checkboxShowStats = e.target.checked;
                                 }}
                             />{" "}
                             Show category stats on hover
+                        </label>
+                    </div>
+                    <div className="text-center text-small">
+                        <label id="filterlabel">
+                            Filter by Category: 
+                            <select
+                                defaultValue = "all"
+                                onChange={e => {
+                                    endpoint = "/api/getTopCategoryUsers"
+                                    category = e.target.value;
+                                    if (category === "all") endpoint = "/api/getTopUsers"
+                                    const label = document.querySelector("label#filterlabel")
+                                    label.classList.add("sort-loading");
+                                    setTopUserData().then(() =>
+                                        label.classList.remove("sort-loading")
+                                    )
+                                    
+                                }}>
+                                <option value="all">All</option>
+                                <option value="sponsor">Sponsor</option>
+                                <option value="intro">Intro</option>
+                                <option value="outro">Endcards/ Credits</option>
+                                <option value="interaction">Interaction Reminder</option>
+                                <option value="selfpromo">Unpaid/ Self Promotion</option>
+                                <option value="music_offtopic">Non-Music</option>
+                                <option value="preview">Preview</option>
+                                <option value="poi_highlight">Highlight</option>
+                                <option value="filler">Filler</option>
+                                <option value="exclusive_access">Exclusive Access</option>
+                            </select>
                         </label>
                     </div>
                 </div>
@@ -249,19 +282,9 @@ const IndexPage = () => {
                                 onClick={e => {
                                     if (e.target.classList.contains("sorted"))
                                         return;
-                                    [
-                                        ...document.getElementsByClassName(
-                                            "sorted"
-                                        ),
-                                    ].forEach(el =>
-                                        el.classList.remove("sorted")
-                                    );
                                     e.target.classList.add("sort-loading");
-                                    setTopUserData(
-                                        API_BASE +
-                                            "/api/getTopUsers?sortType=2&categoryStats=true",
-                                        e.target
-                                    );
+                                    sortType = 2;
+                                    setTopUserData(e.target);
                                 }}
                             >
                                 Submissions
@@ -271,19 +294,9 @@ const IndexPage = () => {
                                 onClick={e => {
                                     if (e.target.classList.contains("sorted"))
                                         return;
-                                    [
-                                        ...document.getElementsByClassName(
-                                            "sorted"
-                                        ),
-                                    ].forEach(el =>
-                                        el.classList.remove("sorted")
-                                    );
                                     e.target.classList.add("sort-loading");
-                                    setTopUserData(
-                                        API_BASE +
-                                            "/api/getTopUsers?sortType=0&categoryStats=true",
-                                        e.target
-                                    );
+                                    sortType = 0;
+                                    setTopUserData(e.target);
                                 }}
                             >
                                 Time Saved
@@ -293,19 +306,9 @@ const IndexPage = () => {
                                 onClick={e => {
                                     if (e.target.classList.contains("sorted"))
                                         return;
-                                    [
-                                        ...document.getElementsByClassName(
-                                            "sorted"
-                                        ),
-                                    ].forEach(el =>
-                                        el.classList.remove("sorted")
-                                    );
                                     e.target.classList.add("sort-loading");
-                                    setTopUserData(
-                                        API_BASE +
-                                            "/api/getTopUsers?sortType=1&categoryStats=true",
-                                        e.target
-                                    );
+                                    sortType = 1;
+                                    setTopUserData(e.target);
                                 }}
                             >
                                 Total Skips
