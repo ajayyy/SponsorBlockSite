@@ -14,8 +14,8 @@ const IndexPage = () => {
 
     useEffect(() => {
         fetch("https://sponsor.ajay.app/api/getTotalStats")
-            .then(response => response.json())
-            .then(resultData => setTotalStats(resultData));
+            .then((response) => response.json())
+            .then((resultData) => setTotalStats(resultData));
     }, []);
 
     return (
@@ -290,9 +290,7 @@ const IndexPage = () => {
                             Terms of Use
                         </a>
                         {", "}
-                        <a href="donate">
-                            Donate
-                        </a>
+                        <a href="donate">Donate</a>
                     </p>
                 </div>
             </div>

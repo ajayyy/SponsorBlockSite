@@ -51,8 +51,9 @@ const IndexPage = () => {
         let lastPercentage = 0;
         const piechartCode = data.map((d, index) => {
             const percent = parseFloat(d[1]);
-            const str = `${categoryStatsColors[index]} 0 ${lastPercentage +
-                percent}%`;
+            const str = `${categoryStatsColors[index]} 0 ${
+                lastPercentage + percent
+            }%`;
             lastPercentage += percent;
             return str;
         });
@@ -68,17 +69,13 @@ const IndexPage = () => {
         url.searchParams.append("sortType", sortType);
         url.searchParams.append("category", category);
         return fetch(url)
-            .then(response => response.json())
-            .then(resultData => {
+            .then((response) => response.json())
+            .then((resultData) => {
                 let size = resultData.userNames.length;
 
                 if (clickedElement) {
-                    [
-                        ...document.getElementsByClassName(
-                            "sorted"
-                        ),
-                    ].forEach(el =>
-                        el.classList.remove("sorted")
+                    [...document.getElementsByClassName("sorted")].forEach(
+                        (el) => el.classList.remove("sorted")
                     );
                     clickedElement.classList.add("sorted");
                     clickedElement.classList.remove("sort-loading");
@@ -102,12 +99,12 @@ const IndexPage = () => {
                                 accumulator + currentValue,
                             0
                         );
-                        categoryStats = resultData.categoryStats[
-                            i
-                        ].map(value => [
-                            value,
-                            ((value / total) * 100).toFixed(2),
-                        ]);
+                        categoryStats = resultData.categoryStats[i].map(
+                            (value) => [
+                                value,
+                                ((value / total) * 100).toFixed(2),
+                            ]
+                        );
                     }
 
                     transformedData.push({
@@ -127,15 +124,15 @@ const IndexPage = () => {
 
     useEffect(() => {
         fetch(API_BASE + "/api/getTotalStats?countContributingUsers=true")
-            .then(response => response.json())
-            .then(resultData => {
+            .then((response) => response.json())
+            .then((resultData) => {
                 setIsTotalStatsLoading(false);
                 setTotalStats(resultData);
             });
         setTopUserData();
     }, []);
 
-    const displayCategoryStats = stats => {
+    const displayCategoryStats = (stats) => {
         if (stats === false) return;
         if (!checkboxShowStats) return;
         setCategoryStats({ visible: true, data: stats });
@@ -231,7 +228,7 @@ const IndexPage = () => {
                             <input
                                 type="checkbox"
                                 value={checkboxShowStats}
-                                onChange={e => {
+                                onChange={(e) => {
                                     checkboxShowStats = e.target.checked;
                                 }}
                             />{" "}
@@ -240,31 +237,43 @@ const IndexPage = () => {
                     </div>
                     <div className="text-center text-small">
                         <label id="filterlabel">
-                            Filter by Category: 
+                            Filter by Category:
                             <select
-                                defaultValue = "all"
-                                onChange={e => {
-                                    endpoint = "/api/getTopCategoryUsers"
+                                defaultValue="all"
+                                onChange={(e) => {
+                                    endpoint = "/api/getTopCategoryUsers";
                                     category = e.target.value;
-                                    if (category === "all") endpoint = "/api/getTopUsers"
-                                    const label = document.querySelector("label#filterlabel")
+                                    if (category === "all")
+                                        endpoint = "/api/getTopUsers";
+                                    const label =
+                                        document.querySelector(
+                                            "label#filterlabel"
+                                        );
                                     label.classList.add("sort-loading");
                                     setTopUserData().then(() =>
                                         label.classList.remove("sort-loading")
-                                    )
-                                    
-                                }}>
+                                    );
+                                }}
+                            >
                                 <option value="all">All</option>
                                 <option value="sponsor">Sponsor</option>
                                 <option value="intro">Intro</option>
                                 <option value="outro">Endcards/ Credits</option>
-                                <option value="interaction">Interaction Reminder</option>
-                                <option value="selfpromo">Unpaid/ Self Promotion</option>
-                                <option value="music_offtopic">Non-Music</option>
+                                <option value="interaction">
+                                    Interaction Reminder
+                                </option>
+                                <option value="selfpromo">
+                                    Unpaid/ Self Promotion
+                                </option>
+                                <option value="music_offtopic">
+                                    Non-Music
+                                </option>
                                 <option value="preview">Preview</option>
                                 <option value="poi_highlight">Highlight</option>
                                 <option value="filler">Filler</option>
-                                <option value="exclusive_access">Exclusive Access</option>
+                                <option value="exclusive_access">
+                                    Exclusive Access
+                                </option>
                             </select>
                         </label>
                     </div>
@@ -279,7 +288,7 @@ const IndexPage = () => {
                             <th>User Name</th>
                             <th
                                 className="pointer"
-                                onClick={e => {
+                                onClick={(e) => {
                                     if (e.target.classList.contains("sorted"))
                                         return;
                                     e.target.classList.add("sort-loading");
@@ -291,7 +300,7 @@ const IndexPage = () => {
                             </th>
                             <th
                                 className="pointer sorted"
-                                onClick={e => {
+                                onClick={(e) => {
                                     if (e.target.classList.contains("sorted"))
                                         return;
                                     e.target.classList.add("sort-loading");
@@ -303,7 +312,7 @@ const IndexPage = () => {
                             </th>
                             <th
                                 className="pointer"
-                                onClick={e => {
+                                onClick={(e) => {
                                     if (e.target.classList.contains("sorted"))
                                         return;
                                     e.target.classList.add("sort-loading");
@@ -330,12 +339,12 @@ const IndexPage = () => {
                                         index % 2 ? "odd" : "even"
                                     }`}
                                     key={index}
-                                    onMouseEnter={_ => {
+                                    onMouseEnter={(_) => {
                                         displayCategoryStats(
                                             value.categoryStats
                                         );
                                     }}
-                                    onMouseLeave={_ => {
+                                    onMouseLeave={(_) => {
                                         hideCategoryStats();
                                     }}
                                 >
@@ -395,9 +404,10 @@ const IndexPage = () => {
                     <div
                         className="categorystats-piechart"
                         style={{
-                            background: generateCssConicGradientFromCategoryStats(
-                                categoryStats.data
-                            ),
+                            background:
+                                generateCssConicGradientFromCategoryStats(
+                                    categoryStats.data
+                                ),
                         }}
                     ></div>
                 </div>
