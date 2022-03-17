@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title, overwriteTitle }) {
+function Seo({ description, lang, meta, title, overwriteTitle }) {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -78,13 +78,13 @@ function SEO({ description, lang, meta, title, overwriteTitle }) {
     );
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
     lang: "en",
     meta: [],
     description: "",
 };
 
-SEO.propTypes = {
+Seo.propTypes = {
     description: PropTypes.string,
     lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
@@ -92,4 +92,4 @@ SEO.propTypes = {
     overwriteTitle: PropTypes.string,
 };
 
-export default SEO;
+export default Seo;

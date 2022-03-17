@@ -1,11 +1,11 @@
 import React from "react";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const IndexPage = () => (
     <Layout>
-        <SEO title="Emails I get from scammers" />
+        <Seo title="Emails I get from scammers" />
 
         <div className="container">
             <h1>
