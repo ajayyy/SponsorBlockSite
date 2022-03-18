@@ -1,11 +1,11 @@
 import React from "react";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const IndexPage = () => (
     <Layout>
-        <SEO title="About" />
+        <Seo title="About" />
 
         <div className="container">
             <h2>How it works</h2>
@@ -58,7 +58,7 @@ const IndexPage = () => (
 
             <p>
                 You can read more about my algorithm{" "}
-                <a href="https://ajay.app/blog.html#voting-and-pseudo-randomness-or-sponsorblock-or-youtube-sponsorship-segment-blocker">
+                <a href="https://blog.ajay.app/voting-and-pseudo-randomness-or-sponsorblock-or-youtube-sponsorship-segment-blocker">
                     here
                 </a>
                 .
@@ -104,12 +104,12 @@ const IndexPage = () => (
                 database can be downloaded by anyone. The database may even be
                 automatically backed up by archive.org! The database will always
                 be available{" "}
-                <a href="https://api.sponsor.ajay.app/database.db">here</a>. It
-                is a sqlite database and can be opened in any sqlite database
-                reading program. Certain sensitive info is not in this database
-                and is not public such as individual votes (not vote counts) and
-                hashed IP addresses. That information isn't needed by anyone
-                else, only the server.
+                <a href="https://api.sponsor.ajay.app/database">here</a>. It is
+                a csv and can be opened in any csv or text reading program.
+                Certain sensitive info is not in this database and is not public
+                such as individual votes (not vote counts) and hashed IP
+                addresses. That information isn't needed by anyone else, only
+                the server.
             </p>
 
             <h3>When was this started</h3>
@@ -218,10 +218,8 @@ const IndexPage = () => (
 
             <p>
                 The awesome{" "}
-                <a href="https://github.com/omarroth/invidious/wiki/API">
-                    Invidious API
-                </a>{" "}
-                was used previously.
+                <a href="https://docs.invidious.io/">Invidious API</a> was used
+                previously.
             </p>
         </div>
     </Layout>

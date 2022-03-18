@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Donate from "../components/donate";
 
 const IndexPage = () => {
@@ -21,13 +21,13 @@ const IndexPage = () => {
 
     useEffect(() => {
         fetch("https://sponsor.ajay.app/api/getTotalStats")
-            .then(response => response.json())
-            .then(resultData => setTotalStats(resultData));
+            .then((response) => response.json())
+            .then((resultData) => setTotalStats(resultData));
     }, []);
 
     return (
         <Layout>
-            <SEO
+            <Seo
                 title="Home"
                 overwriteTitle="SponsorBlock - Skip over YouTube Sponsors - Sponsorship Skipper"
             />
@@ -303,9 +303,7 @@ const IndexPage = () => {
                             Terms of Use
                         </a>
                         {", "}
-                        <a href="donate">
-                            Donate
-                        </a>
+                        <a href="donate">Donate</a>
                     </p>
                 </div>
             </div>
