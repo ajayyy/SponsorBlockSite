@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Donate from "../components/donate";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
@@ -11,6 +12,12 @@ const IndexPage = () => {
         totalSubmissions: "Loading",
         minutesSaved: "Loading",
     });
+
+    const [donateModal, setDonateModal] = useState(null);
+
+    const [linkActive, setLinkActive] = useState(true);
+    const chromeLink = "https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone";
+    const firefoxLink = "https://addons.mozilla.org/addon/sponsorblock";
 
     useEffect(() => {
         fetch("https://sponsor.ajay.app/api/getTotalStats")
@@ -30,6 +37,8 @@ const IndexPage = () => {
 
                 <span style={{ color: "white" }}>SponsorBlock</span>
             </div>
+            
+            {donateModal}
 
             <div className="container">
                 <div className="">
@@ -86,15 +95,19 @@ const IndexPage = () => {
                     <div className="text-center">
                         <h2>Download</h2>
 
-                        <a href="https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone">
+                        <a href={linkActive ? chromeLink : null}
+                            onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
+                            onClick={(e) => clickLink(chromeLink, setDonateModal, () => setLinkActive(true))}
+                        >
                             <img
                                 src="/ChromeWebStore_BadgeWBorder_v2_206x58.png"
                                 alt="Download for Chrome"
                             />
                         </a>
 
-                        <a
-                            href="https://addons.mozilla.org/addon/sponsorblock?src=external-website"
+                        <a href={linkActive ? firefoxLink : null}
+                            onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
+                            onClick={() => clickLink(firefoxLink, setDonateModal, () => setLinkActive(true))}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img
@@ -299,5 +312,24 @@ const IndexPage = () => {
         </Layout>
     );
 };
+
+function getDonateModal(link, clear) {
+    return <Donate downloadLink={link} clear={clear} />;
+}
+
+function clickLink(link, set, clear) {
+    if (window.localStorage.getItem("donateModalOpened") !== "true") {
+        window.localStorage.setItem("donateModalOpened", "true");
+        set(getDonateModal(link, () => {
+            set(null);
+            if (clear) clear();
+        }));
+    } else {
+        window.location.href = link;
+        
+        // To prevent double link opens
+        if (clear) setTimeout(() => clear(), 50);
+    }
+}
 
 export default IndexPage;
