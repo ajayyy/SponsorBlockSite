@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "./donate.scss";
 
-const donateLink = "https://paypal.me/ajayyy";
+const donateLink = "https://patreon.com/ajayyy";
 
 const Donate = ({ downloadLink, clear }) => {
     return (
