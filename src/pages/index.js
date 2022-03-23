@@ -96,8 +96,8 @@ const IndexPage = () => {
                         <h2>Download</h2>
 
                         <a href={linkActive ? chromeLink : null}
-                            onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
-                            onClick={(e) => clickLink(chromeLink, setDonateModal, () => setLinkActive(true))}
+                            //onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
+                            //onClick={(e) => clickLink(chromeLink, setDonateModal, () => setLinkActive(true))}
                         >
                             <img
                                 src="/ChromeWebStore_BadgeWBorder_v2_206x58.png"
@@ -106,8 +106,8 @@ const IndexPage = () => {
                         </a>
 
                         <a href={linkActive ? firefoxLink : null}
-                            onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
-                            onClick={() => clickLink(firefoxLink, setDonateModal, () => setLinkActive(true))}
+                            //onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
+                            //onClick={() => clickLink(firefoxLink, setDonateModal, () => setLinkActive(true))}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img
