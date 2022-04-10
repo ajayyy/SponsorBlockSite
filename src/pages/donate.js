@@ -13,9 +13,9 @@ const IndexPage = () => (
             <p>
                 One-time donation:{" "}
                 <a href="https://github.com/sponsors/ajayyy-org?frequency=one-time">
-                    GitHub (No Fee)
+                    GitHub
                 </a>
-                , <a href="https://paypal.me/ajayyy">Paypal (Medium Fee)</a>,{" "}
+                , <a href="https://paypal.me/ajayyy">Paypal</a>,{" "}
                 <a href="bitcoin:bc1qvnjvuqycefz593pu6f2vpngml8ld9wjqd5qcus">
                     BTC
                 </a>
@@ -24,10 +24,10 @@ const IndexPage = () => (
             <p>
                 Recurring:{" "}
                 <a href="https://github.com/sponsors/ajayyy-org">
-                    GitHub (No Fee)
+                    GitHub
                 </a>
                 ,{" "}
-                <a href="https://www.patreon.com/ajayyy">Patreon (High Fee)</a>
+                <a href="https://www.patreon.com/ajayyy">Patreon</a>
             </p>
 
             <hr noshade />
