@@ -34,6 +34,7 @@ const IndexPage = () => {
         "Preview",
         "Highlight",
         "Filler",
+        "Exclusive Access",
         "Chapter"
     ];
     const categoryStatsColors = [
@@ -46,6 +47,7 @@ const IndexPage = () => {
         "#008fd6",
         "#ff1684",
         "#6600ff",
+        "#008a5c",
         "#ffd679"
     ];
 
