@@ -276,6 +276,7 @@ const IndexPage = () => {
                                 <option value="exclusive_access">
                                     Exclusive Access
                                 </option>
+                                <option value="chapter">Chapter</option>
                             </select>
                         </label>
                     </div>
