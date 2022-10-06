@@ -34,6 +34,7 @@ const IndexPage = () => {
         "Preview",
         "Highlight",
         "Filler",
+        "Chapter"
     ];
     const categoryStatsColors = [
         "#00d400",
@@ -45,6 +46,7 @@ const IndexPage = () => {
         "#008fd6",
         "#ff1684",
         "#6600ff",
+        "#ffd679"
     ];
 
     function generateCssConicGradientFromCategoryStats(data) {
