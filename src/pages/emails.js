@@ -82,6 +82,23 @@ const IndexPage = () => (
                 src="https://user-images.githubusercontent.com/12688112/106066307-98506d00-60ca-11eb-8bbc-3f43102539a4.png"
                 alt="scam"
             />
+            <h2>From InsightVenue:</h2>
+            <img
+                src="InsightVenue1.png"
+                alt="scam"
+            />
+            <img
+                src="InsightVenue2.png"
+                alt="scam"
+            />
+            <img
+                src="InsightVenue3.png"
+                alt="scam"
+            />
+            <img
+                src="InsightVenue4.png"
+                alt="scam"
+            />
             <h2>From admedia.com:</h2>
             <img
                 src="https://user-images.githubusercontent.com/12688112/105428058-8d09c700-5c1c-11eb-861a-30af42eb7bfe.png"
