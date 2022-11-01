@@ -121,6 +121,15 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
+                            href="https://fosstodon.org/@sponsorblock"
+                            className="nav-link"
+                        >
+                            <i className="fa fa-mastodon"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
                             href="https://twitter.com/SponsorBlock"
                             className="nav-link"
                         >
