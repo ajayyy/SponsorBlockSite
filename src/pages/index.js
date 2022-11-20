@@ -22,7 +22,7 @@ const IndexPage = () => {
     useEffect(() => {
         fetch("https://sponsor.ajay.app/api/getTotalStats")
             .then((response) => response.json())
-            .then((resultData) => setTotalStats(resultData));
+            .then((resultData) => response.apiUsers ? setTotalStats(resultData) : null);
     }, []);
 
     return (
