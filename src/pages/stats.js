@@ -73,7 +73,10 @@ const IndexPage = () => {
         url.searchParams.append("sortType", sortType);
         url.searchParams.append("category", category);
         return fetch(url)
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok) response.json()
+                else Promise.reject(response)
+            })
             .then((resultData) => {
                 let size = resultData.userNames.length;
 
@@ -123,16 +126,21 @@ const IndexPage = () => {
                 }
 
                 setTopUsers(transformedData);
-            });
+            })
+            .catch((r) => console.error(r));
     }
 
     useEffect(() => {
         fetch(API_BASE + "/api/getTotalStats?countContributingUsers=true")
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok) response.json()
+                else Promise.reject(response)
+            })
             .then((resultData) => {
                 setIsTotalStatsLoading(false);
                 setTotalStats(resultData);
-            });
+            })
+            .catch((r) => console.error(r));
         setTopUserData();
     }, []);
 
