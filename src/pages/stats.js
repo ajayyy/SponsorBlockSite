@@ -75,7 +75,7 @@ const IndexPage = () => {
         return fetch(url)
             .then((response) => {
                 if (response.ok) return response.json()
-                else Promise.reject(response)
+                else return Promise.reject(response)
             })
             .then((resultData) => {
                 let size = resultData.userNames.length;
@@ -134,7 +134,7 @@ const IndexPage = () => {
         fetch(API_BASE + "/api/getTotalStats?countContributingUsers=true")
             .then((response) => {
                 if (response.ok) return response.json()
-                else Promise.reject(response)
+                else return Promise.reject(response)
             })
             .then((resultData) => {
                 setIsTotalStatsLoading(false);
