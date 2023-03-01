@@ -139,7 +139,7 @@ const IndexPage = () => {
                         </a>
 
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Opera"
+                            href={chromeLink}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img src="/opera.png" alt="Download for Opera" />
