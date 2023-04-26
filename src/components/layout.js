@@ -123,6 +123,7 @@ const Layout = ({ children }) => {
                         <a
                             href="https://fosstodon.org/@sponsorblock"
                             className="nav-link"
+                            rel="me"
                         >
                             <i className="fa fa-mastodon"></i>
                         </a>
