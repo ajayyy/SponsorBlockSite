@@ -92,6 +92,22 @@ const IndexPage = () => {
                         <Link to="/stats">the leaderboard</Link>.
                     </p>
 
+                    <a style={{display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            textDecoration: "none"
+                        }}
+                        href="https://dearrow.ajay.app"
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src="dearrow.svg"
+                            style={{width: "35px", padding: "10px"}}/>
+
+                        <span>
+                            Tired of clickbait? Also check out DeArrow
+                        </span>
+                    </a>
+
                     <div className="text-center">
                         <h2>Download</h2>
 
