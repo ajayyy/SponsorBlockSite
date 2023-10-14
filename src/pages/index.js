@@ -204,6 +204,17 @@ const IndexPage = () => {
                         </a>
 
                         <a
+                            href="https://github.com/dmunozv04/iSponsorBlockTV#compatibility"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img
+                                src="/tv.png"
+                                alt="Download for TVs"
+                                style={{ height: "30px" }}
+                            />
+                        </a>
+
+                        <a
                             href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#android-tv"
                             style={{ paddingLeft: "15px" }}
                         >
