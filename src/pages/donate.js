@@ -11,23 +11,34 @@ const IndexPage = () => (
             <h1>Donate</h1>
 
             <p>
-                One-time donation:{" "}
-                <a href="https://github.com/sponsors/ajayyy-org?frequency=one-time">
-                    GitHub
-                </a>
-                , <a href="https://paypal.me/ajayyy">Paypal</a>,{" "}
-                <a href="bitcoin:bc1qvnjvuqycefz593pu6f2vpngml8ld9wjqd5qcus">
-                    BTC
-                </a>
+                Hi, I'm Ajay.
+                For the last 4 years, I've been working on SponsorBlock in my spare time.
+                In January 2024, I will be graduating from university and hope to make SponsorBlock and future open-source user-focused tools my full time job.
+            </p>
+
+            <p>
+                If you'd like to help make that possible, consider supporting using an option below.
+                If you are able to, a recurring donation would be super helpful, but one time donations are very much appreciated as well!
             </p>
 
             <p>
                 Recurring:{" "}
                 <a href="https://github.com/sponsors/ajayyy-org">
-                    GitHub
+                    GitHub (lowest fees)
                 </a>
                 ,{" "}
                 <a href="https://www.patreon.com/ajayyy">Patreon</a>
+            </p>
+
+            <p>
+                One-time donation:{" "}
+                <a href="https://github.com/sponsors/ajayyy-org?frequency=one-time">
+                    GitHub (lowest fees)
+                </a>
+                , <a href="https://paypal.me/ajayyy">Paypal</a>,{" "}
+                <a href="bitcoin:bc1qvnjvuqycefz593pu6f2vpngml8ld9wjqd5qcus">
+                    BTC
+                </a>
             </p>
 
             <hr noshade />
