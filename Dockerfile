@@ -1,4 +1,4 @@
-FROM node:19-alpine as builder
+FROM node:20-alpine as builder
 RUN apk add --no-cache --virtual .build-deps python3 make g++
 WORKDIR /app
 COPY package.json package-lock.json gatsby-config.js ./
