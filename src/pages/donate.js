@@ -28,6 +28,8 @@ const IndexPage = () => (
                 </a>
                 ,{" "}
                 <a href="https://www.patreon.com/ajayyy">Patreon</a>
+                ,{" "}
+                <a href="https://liberapay.com/ajayyy">Liberapay</a>
             </p>
 
             <p>
