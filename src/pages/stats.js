@@ -342,7 +342,12 @@ const IndexPage = () => {
                         {topUsers.length === 0 ? (
                             <tr className={"row--even"}>
                                 <td className="topUsersLoading" colSpan="5">
-                                    Loading...
+                                    <div>Loading...</div>
+                                    <div style={{
+                                        fontSize: "16px"
+                                    }}>
+                                        Failing to load? Also try <a href="https://leaderboard.sbstats.uk/">leaderboard.sbstats.uk</a>
+                                    </div>
                                 </td>
                             </tr>
                         ) : (
