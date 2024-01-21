@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import "./donate.scss";
@@ -7,11 +6,9 @@ const donateLink = "https://patreon.com/ajayyy";
 
 const Donate = ({ downloadLink, clear }) => {
     return (
-        <div className="donate-modal-container"
+        <button className="donate-modal-container"
             onClick={(e) => {
-                if (e.target.classList.contains("donate-modal-container")) {
-                    if (clear) clear();
-                }
+                if (clear) clear();
             }}>
             <div className="donate-modal">
                 <div>
@@ -38,9 +35,10 @@ const Donate = ({ downloadLink, clear }) => {
                     </a>
                 </div>
             </div>
-        </div>
+        </button>
     );
 };
+
 
 Donate.propTypes = {
     downloadLink: PropTypes.string.isRequired,

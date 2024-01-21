@@ -55,9 +55,8 @@ const IndexPage = () => {
         let lastPercentage = 0;
         const piechartCode = data.map((d, index) => {
             const percent = parseFloat(d[1]);
-            const str = `${categoryStatsColors[index]} 0 ${
-                lastPercentage + percent
-            }%`;
+            const str = `${categoryStatsColors[index]} 0 ${lastPercentage + percent
+                }%`;
             lastPercentage += percent;
             return str;
         });
@@ -351,12 +350,11 @@ const IndexPage = () => {
                                 </td>
                             </tr>
                         ) : (
-                            topUsers.map((value, index) => (
+                            topUsers.map((value) => (
                                 <tr
-                                    className={`row--${
-                                        index % 2 ? "odd" : "even"
-                                    }`}
-                                    key={index}
+                                    className={`row--${value.id % 2 ? "odd" : "even"
+                                        }`}
+                                    key={value.id}
                                     onMouseEnter={(_) => {
                                         displayCategoryStats(
                                             value.categoryStats
@@ -367,7 +365,7 @@ const IndexPage = () => {
                                     }}
                                 >
                                     <td className="rank celltype-number">
-                                        {index + 1}.
+                                        {value.id + 1}.
                                     </td>
                                     <td>{value.userName}</td>
                                     <td className="celltype-number has--categorystats">
@@ -398,17 +396,17 @@ const IndexPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {categoryStats.data.map((data, index) => (
+                            {categoryStats.data.map((data) => (
                                 <tr
                                     className={classNames({
                                         dim: data[0] === 0,
                                     })}
                                     style={{
-                                        color: categoryStatsColors[index],
+                                        color: categoryStatsColors[data.id],
                                     }}
-                                    key={index}
+                                    key={data.id}
                                 >
-                                    <td>{categoryStatsTitles[index]}</td>
+                                    <td>{categoryStatsTitles[data.id]}</td>
                                     <td className="celltype-number">
                                         {data[0]}
                                     </td>
@@ -418,6 +416,7 @@ const IndexPage = () => {
                                 </tr>
                             ))}
                         </tbody>
+
                     </table>
                     <div
                         className="categorystats-piechart"
