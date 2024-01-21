@@ -6,25 +6,25 @@
   "author": "Ajay Ramachandran",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "fork-awesome": "^1.2.0",
-    "gatsby": "^5.12.9",
-    "gatsby-plugin-manifest": "^5.12.0",
-    "gatsby-plugin-react-helmet": "^6.12.0",
-    "gatsby-plugin-sass": "^6.12.3",
+    "gatsby": "^5.13.1",
+    "gatsby-plugin-manifest": "^5.13.0",
+    "gatsby-plugin-react-helmet": "^6.13.0",
+    "gatsby-plugin-sass": "^6.13.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "sass": "^1.69.5"
+    "sass": "^1.70.0"
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "prettier": "^3.2.4"
   },
   "license": "MIT",
   "engines": {
-    "node": ">=14.15.0"
+    "node": ">=18"
   },
   "scripts": {
     "build": "gatsby build",
@@ -32,8 +32,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md,scss}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
