@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json gatsby-config.js ./
 COPY src src
 COPY static static
-RUN npm ci && npm run build
+RUN npm install --legacy-peer-deps && npm run build
 
 FROM nginx as app
 EXPOSE 80
