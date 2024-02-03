@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '18'
       - name: Install build dependencies
-        run: apt install build-essential python3
+        run: sudo apt-install -y build-essential python3
       - name: Build site
         run: npm run build
       - name: Docker meta
