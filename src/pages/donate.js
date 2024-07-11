@@ -38,8 +38,17 @@ const IndexPage = () => (
                     GitHub (lowest fees)
                 </a>
                 , <a href="https://paypal.me/ajayyy">Paypal</a>,{" "}
+                <a style={{ textDecoration: "underline" }} onClick={() => {
+                    alert("dev@ajay.app");
+                }}>Interac e-Transfer</a>,{" "}
+                <a style={{ textDecoration: "underline" }} onClick={() => {
+                    alert("BIC: TRWIBEB1XXX\nIBAN: BE74 9678 0459 0007");
+                }}>SEPA</a>,{" "}
                 <a href="bitcoin:bc1qvnjvuqycefz593pu6f2vpngml8ld9wjqd5qcus">
                     BTC
+                </a>,{" "}
+                <a href="monero:85vyiPD4yby5bfkN51kSuc9sjZCMmBaoE5t1MCvxX4SuQMamgK7D8LGYbhkm1XGkgPgYn1FBBa3MiDGANXigEUJcEWib6H8">
+                    XMR
                 </a>
             </p>
 
