@@ -12,8 +12,8 @@ const IndexPage = () => (
 
             <p>
                 Hi, I'm Ajay.
-                For the last 4 years, I've been working on SponsorBlock in my spare time.
-                In January 2024, I will be graduating from university and hope to make SponsorBlock and future open-source user-focused tools my full time job.
+                For past 5 years, I've been working open-source tools like SponsorBlock and DeArrow.
+                Thanks to your support, I am now able to work on these open-source projects full time.
             </p>
 
             <p>
