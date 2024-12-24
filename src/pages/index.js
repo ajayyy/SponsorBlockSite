@@ -257,7 +257,7 @@ const IndexPage = () => {
                     </p>
 
                     <p className="text-center">
-                        Check out <Link to="/about">how it works</Link>.
+                        Check out <Link to="/about">how it works</Link>, and <a href="https://wiki.sponsor.ajay.app/w/Community">all the community tools</a>.
                     </p>
 
                     <p className="text-center">
@@ -320,6 +320,47 @@ const IndexPage = () => {
                         </a>
                         {", "}
                         <a href="donate">Donate</a>
+                    </p>
+
+                    <h4 className="text-center" style={{ marginBottom: "0" }}>Links to other cool things</h4>
+
+                    <p className="text-center footer-links" style={{ fontSize: "11px", marginTop: "0px" }}>
+                        <a href="https://github.com/mchangrh/yt-neuter">
+                            yt-neuter
+                        </a>
+                        <a href="https://github.com/mchangrh/uscripts">
+                            yt uscripts
+                        </a>
+                        <a href="https://github.com/gorhill/uBlock">
+                            uBlock Origin
+                        </a>
+                        <a href="https://github.com/amitbl/blocktube">
+                            BlockTube
+                        </a>
+                        <a href="https://darkreader.org/">
+                            Dark Reader
+                        </a>
+                        <a href="https://filmot.com/">
+                            Filmot
+                        </a>
+                        <a href="https://nekocap.com/">
+                            NekoCap
+                        </a>
+                        <a href="https://github.com/yt-dlp/yt-dlp">
+                            yt-dlp
+                        </a>
+                        <a href="https://restic.net/">
+                            Restic
+                        </a>
+                        <a href="https://flashpointarchive.org/">
+                            Flashpoint
+                        </a>
+                        <a href="https://wiki.archiveteam.org/">
+                            Archive Team
+                        </a>
+                        <a href="https://datahorde.org/">
+                            Data Horde
+                        </a>
                     </p>
                 </div>
             </div>

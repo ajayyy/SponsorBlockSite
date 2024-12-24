@@ -248,6 +248,10 @@ table.highlight-row-on-hover tr:hover td {
     vertical-align: baseline;
 }
 
+.footer-links > a {
+    display: block;
+}
+
 @keyframes loader {
     0% {
         transform: rotate(0deg);
