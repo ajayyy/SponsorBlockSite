@@ -361,6 +361,9 @@ const IndexPage = () => {
                         <a href="https://datahorde.org/">
                             Data Horde
                         </a>
+                        <a href="https://bettertransitottawa.ca/">
+                            Better Transit Ottawa
+                        </a>
                     </p>
                 </div>
             </div>
