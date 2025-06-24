@@ -261,6 +261,53 @@ table.highlight-row-on-hover tr:hover td {
     }
 }
 
+.donate-ask {
+    background-color: rgb(26, 26, 26, 0.95);
+    border-radius: 15px;
+
+    text-align: center;
+    padding: 10px;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.donate-ask .donate-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donate-ask .donate-text img {
+    height: 2rem;
+    border-radius: 100%;
+
+    margin-right: 15px;
+}
+
+.donate-ask a {
+    text-decoration: none;
+    color: #eee;
+    border-radius: 15px;
+    background-color: rgb(58, 58, 58, 0.9);
+    padding: 10px;
+
+    transition: background-color 0.3s ease;
+
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.donate-ask a:hover {
+    background-color: rgba(70, 70, 70, 0.9);
+}
+
 .topUsersLoading {
     text-align: center;
     font-size: 1.5em;

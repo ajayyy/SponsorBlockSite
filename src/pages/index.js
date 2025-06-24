@@ -227,6 +227,20 @@ const IndexPage = () => {
                         </a>
                     </div>
 
+                    <div className="donate-ask">
+                        <div className="donate-text">
+                            <img
+                                src="/ajay_profile.jpg"
+                                alt="Ajay's avatar"
+                            ></img>
+                            Support my full-time work on SponsorBlock 
+                        </div>
+
+                        <Link to="/donate" className="donate-button">
+                            Donate
+                        </Link>
+                    </div>
+
                     <p>
                         The{" "}
                         <a href="https://github.com/ajayyy/SponsorBlock">
@@ -308,8 +322,6 @@ const IndexPage = () => {
                         <a href="https://gist.github.com/ajayyy/9e8100f069348e0bc062641f34d6af12">
                             Terms of Use
                         </a>
-                        {", "}
-                        <a href="donate">Donate</a>
                     </p>
 
                     <h4 className="text-center" style={{ marginBottom: "0" }}>Links to other cool things</h4>

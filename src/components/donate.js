@@ -41,7 +41,6 @@ export function DonateComponent() {
                         Other ways to donate
                     </a>
                 </div>
-
             </div>
 
             <span style={{ display: !showOtherDonationMethods ? "none" : null, textAlign: "center" }}>
