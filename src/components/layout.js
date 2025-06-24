@@ -83,6 +83,12 @@ const Layout = ({ children }) => {
                             API
                         </a>
                     </li>
+
+                    <li>
+                        <Link to="/donate" className="nav-link">
+                            Donate
+                        </Link>
+                    </li>
                 </ul>
 
                 <ul className="nav">

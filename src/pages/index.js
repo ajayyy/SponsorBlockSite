@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import Donate from "../components/donate";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
@@ -13,9 +12,6 @@ const IndexPage = () => {
         minutesSaved: "Loading",
     });
 
-    const [donateModal, setDonateModal] = useState(null);
-
-    const [linkActive, setLinkActive] = useState(true);
     const chromeLink = "https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone";
     const firefoxLink = "https://addons.mozilla.org/addon/sponsorblock";
 
@@ -38,8 +34,6 @@ const IndexPage = () => {
                 <span style={{ color: "white" }}>SponsorBlock</span>
             </div>
             
-            {donateModal}
-
             <div className="container">
                 <div className="">
                     <p>
@@ -111,9 +105,7 @@ const IndexPage = () => {
                     <div className="text-center">
                         <h2>Download</h2>
 
-                        <a href={linkActive ? chromeLink : null}
-                            //onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
-                            //onClick={(e) => clickLink(chromeLink, setDonateModal, () => setLinkActive(true))}
+                        <a href={chromeLink}
                         >
                             <img
                                 src="/ChromeWebStore_BadgeWBorder_v2_206x58.png"
@@ -121,9 +113,7 @@ const IndexPage = () => {
                             />
                         </a>
 
-                        <a href={linkActive ? firefoxLink : null}
-                            //onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
-                            //onClick={() => clickLink(firefoxLink, setDonateModal, () => setLinkActive(true))}
+                        <a href={firefoxLink}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img
@@ -370,24 +360,5 @@ const IndexPage = () => {
         </Layout>
     );
 };
-
-function getDonateModal(link, clear) {
-    return <Donate downloadLink={link} clear={clear} />;
-}
-
-function clickLink(link, set, clear) {
-    if (window.localStorage.getItem("donateModalOpened") !== "true") {
-        window.localStorage.setItem("donateModalOpened", "true");
-        set(getDonateModal(link, () => {
-            set(null);
-            if (clear) clear();
-        }));
-    } else {
-        window.location.href = link;
-        
-        // To prevent double link opens
-        if (clear) setTimeout(() => clear(), 50);
-    }
-}
 
 export default IndexPage;
