@@ -13,13 +13,12 @@ const IndexPage = () => (
 
             <p>
                 Hi, I'm Ajay.
-                For past 5 years, I've been working open-source tools like SponsorBlock and DeArrow.
+                For the past 5 years, I've been working open-source tools like SponsorBlock and DeArrow.
                 Thanks to your support, I am now able to work on these open-source projects full time.
             </p>
 
             <p>
                 If you'd like to help make that possible, consider supporting using an option below.
-                If you are able to, a recurring donation would be super helpful, but one time donations are very much appreciated as well!
             </p>
 
             <DonateComponent />
