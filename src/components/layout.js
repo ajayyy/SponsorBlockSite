@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 
 import "normalize.css/normalize.css";
 import "./layout.scss";
-import "fork-awesome/css/fork-awesome.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Layout = ({ children }) => {
     return (
@@ -111,7 +111,7 @@ const Layout = ({ children }) => {
                             className="nav-link"
                             title="Discord Invite"
                         >
-                            <i className="fa fa-discord"></i>
+                            <i className="fa-brands fa-discord"></i>
                         </a>
                     </li>
 
@@ -120,8 +120,18 @@ const Layout = ({ children }) => {
                             href="https://matrix.to/#/#sponsor:ajay.app?via=ajay.app&via=matrix.org&via=mozilla.org"
                             className="nav-link"
                             title="Matrix Invite"
+                            style={{ height: "28.8px", display: "flex", alignItems: "center" }}
                         >
-                            <i className="fa fa-matrix-org"></i>
+                            <img src="/matrix.svg" style={{ height: "19.2px"}} />
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://bsky.app/profile/sponsor.ajay.app"
+                            className="nav-link"
+                        >
+                            <i className="fa-brands fa-bluesky"></i>
                         </a>
                     </li>
 
@@ -131,7 +141,7 @@ const Layout = ({ children }) => {
                             className="nav-link"
                             rel="me"
                         >
-                            <i className="fa fa-mastodon"></i>
+                            <i className="fa-brands fa-mastodon"></i>
                         </a>
                     </li>
 
@@ -140,7 +150,7 @@ const Layout = ({ children }) => {
                             href="https://twitter.com/SponsorBlock"
                             className="nav-link"
                         >
-                            <i className="fa fa-twitter"></i>
+                            <i className="fa-brands fa-twitter"></i>
                         </a>
                     </li>
 
@@ -149,7 +159,7 @@ const Layout = ({ children }) => {
                             href="https://github.com/ajayyy/SponsorBlock"
                             className="nav-link"
                         >
-                            <i className="fa fa-github"></i>
+                            <i className="fa-brands fa-github"></i>
                         </a>
                     </li>
                 </ul>

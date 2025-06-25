@@ -5,19 +5,20 @@
   "version": "1.0.0",
   "author": "Ajay Ramachandran",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "classnames": "^2.5.1",
-    "fork-awesome": "^1.2.0",
     "gatsby": "^5.13.1",
-    "gatsby-plugin-manifest": "^5.13.0",
-    "gatsby-plugin-react-helmet": "^6.13.0",
-    "gatsby-plugin-sass": "^6.13.0",
+    "gatsby-plugin-manifest": "^5.14.0",
+    "gatsby-plugin-react-helmet": "^6.14.0",
+    "gatsby-plugin-sass": "^6.14.0",
+    "lmdb": "^3.4.0",
+    "msgpackr": "^1.11.4",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "sass": "^1.70.0"
+    "sass": "^1.89.2"
   },
   "devDependencies": {
     "prettier": "^3.2.4"
