@@ -38,7 +38,7 @@ const IndexPage = () => {
                 <div className="">
 
                     <div className="sam-altman">
-                        <Link to="/donate">
+                        <Link to="/donate" title="i neeeeeed RAM!!11!! Think of the poor economy!?!">
                             <img
                                 src="/donate-to-sam-altman.webp"
                                 alt="Donate RAM to Sam Altman"
