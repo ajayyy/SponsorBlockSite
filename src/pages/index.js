@@ -36,6 +36,16 @@ const IndexPage = () => {
             
             <div className="container">
                 <div className="">
+
+                    <div className="sam-altman">
+                        <Link to="/donate">
+                            <img
+                                src="/donate-to-sam-altman.webp"
+                                alt="Donate RAM to Sam Altman"
+                            />
+                        </Link>
+                    </div>
+
                     <p>
                         SponsorBlock is an open-source crowdsourced browser
                         extension and open API for skipping sponsor segments in
